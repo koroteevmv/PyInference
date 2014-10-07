@@ -1,6 +1,6 @@
 ﻿# -*- coding: UTF-8 -*-
 
-'''Модуль для работы с механизмом нечеткого вывода.
+"""Модуль для работы с механизмом нечеткого вывода.
 
 Позволяет строить простейшие нечеткие экспертные системы (FES) путем построения
 нечетких подмножеств на деревьях особого типа.
@@ -42,30 +42,31 @@
     <FuzzySubset.Subset instance at 0x02B3A788>
     >>> print T.get_estim()
     9.55
-'''
+"""
 
-from .subset import Interval
-from .domain import Domain
-from .tnorm import MinMax
-from .aggregation import Simple, Tree, Rules
+from fuzzy.subset import Interval
+from fuzzy.domain import Domain
+from fuzzy.tnorm import MinMax
+
 
 class AggregationMetod(object):
-    '''
+    """
     Класс определяет интерфейс к различным методам агрегации частных показателей
     в интегральный. Подклассы данного класса реализуют алгоритмы интеграции
     различных типов нечетких контроллеров.
-    '''
+    """
     def calculate(self, host):
-        '''
+        """
         Метод возвращает агрегированное значение
-        '''
+        """
         pass
 
+
 class Simple(AggregationMetod):
-    '''
+    """
     Метод агрегации показателей, в котором интегральный показатель расчитывается
     как среднее арифметическое частных.
-    '''
+    """
     def calculate(self, host):
         est = 0.0
         weight = 0.0
@@ -81,18 +82,19 @@ class Simple(AggregationMetod):
             host.estimation = est/weight
             return host.estimation
 
+
 class Rules(AggregationMetod):
-    '''
+    """
     Данный класс объединяет группу методов расчета интегральных показетелей,
     основанных на использовании системы нечетких правил. Все типы нечеткого
     вывода, использующие правила вывода реализуются классами, дочерними от
     данного.
-    '''
+    """
     def __init__(self):
         self.rules = []
 
     def add_rule(self, ant=None, concl='', name=''):
-        '''
+        """
         Данный метод позволяет добавить систему правил, согласно которой будет
         вычисляться оценка текущего узла дерева (к которому применен метод) в
         зависимости от оценок его потомков.
@@ -121,7 +123,7 @@ class Rules(AggregationMetod):
                 Имя терма классификатора, соответствующее данной посылке.
             name
                 имя правила, используемое опционально для удобства.
-        '''
+        """
 ##        # проверяем првильность параметров:
 ##        for param, value in ant.iteritems():
 ##            # param должен быть среди потомков
@@ -134,8 +136,9 @@ class Rules(AggregationMetod):
             ant = {}
         self.rules.append(Rule(ant=ant, concl=concl, name=name))
 
+
 class Mamdani(Rules):
-    '''
+    """
     Данный класс реализует функциональность контроллера Мамдани, то есть
     классический алгоритм нечеткого композитного вывода.
 
@@ -147,7 +150,7 @@ class Mamdani(Rules):
     результирующего показателя. Они объединяются путем применения к ним
     t-конормы и получившееся НПМ и бдет являться конечным результатом процесса
     нечеткого вывода.
-    '''
+    """
     def __init__(self):
         super(Mamdani, self).__init__(self)
 
@@ -174,13 +177,14 @@ class Mamdani(Rules):
                                          host.classifier[rule.concl])
         return res
 
+
 class RulesAccurate(Rules):
-    '''
+    """
     Данный алгоритм нечеткого вывода в общем аналогичен контроллеру Мамдани,
     однако, результат определяется как среднне арифметическое взвешенное по
     дефаззифицированным термам заключения каждого правила, причем весами
     являются веса соответствующего правила.
-    '''
+    """
     def calculate(self, host):
         sum_a = 0.0
         summ = 0.0
@@ -201,8 +205,9 @@ class RulesAccurate(Rules):
             return 0.0
         return summ/sum_a
 
+
 class Rule(object):
-    '''
+    """
     Описание
     Синтаксис:
         >>>
@@ -210,7 +215,7 @@ class Rule(object):
         ant
         concl
         name
-    '''
+    """
     def __init__(self, ant=None, concl='', name=''):
         if not ant:
             ant = {}
@@ -225,8 +230,9 @@ class Rule(object):
         res += ' -> '+str(self.concl)
         return res
 
+
 class Tree(Domain):
-    '''
+    """
     Представляет собой носитель нечеткого множества в виде иерархической
     структуры (дерева), в которой оценка данного узла зависит определенным
     образом от оценок его потомков.
@@ -278,7 +284,7 @@ class Tree(Domain):
         weight
         classifier
         tnorm
-    '''
+    """
     # TODO отделить МАИ от иерархического носителя
     # TODO реализовать в интерфейсе Subset иерархический носитель.
     # Без изъебов типа весов и классификаторов. Но с A.value()
@@ -293,7 +299,7 @@ class Tree(Domain):
         self.tnorm = tnorm
 
     def __str__(self):
-        '''
+        """
         Для быстрого вывода основной информации о дереве, поддереве или листе,
         можно использовать процедуру преобразования к строковому типу.
         Синтаксис:
@@ -311,11 +317,11 @@ class Tree(Domain):
             ...     print i
             ...
 
-        '''
+        """
         return self.name+' - '+ str(self.get_estim())
 
     def __iter__(self):
-        '''
+        """
         Для быстрого перебора всех дочерних элементов дерева можно использовать
         объект данного класса как итератор. Порядок, в котором возвращаются
         узлы дерева соответствует алгоритму postorder traversal, то есть
@@ -331,30 +337,30 @@ class Tree(Domain):
             branch 1
             branch 2
             tree
-        '''
+        """
         for leaf in self.childs.values():
             for i in leaf:
                 yield i
         yield self
 
     def add(self, addition):
-        '''
+        """
         Описание
         Синтаксис:
         Параметры:
             Параметр
                 описание
-        '''
+        """
         self.childs[addition.name] = addition
 
     def get_estim(self):
-        '''
+        """
         Описание
         Синтаксис:
         Параметры:
             Параметр
                 описание
-        '''
+        """
         if self.estimation or self.estimation == 0.0:
             return self.estimation
         else:
@@ -363,17 +369,17 @@ class Tree(Domain):
             return self.agg.calculate(self)
 
     def set_estim(self, val):
-        '''
+        """
         Описание
         Синтаксис:
         Параметры:
             Параметр
                 описание
-        '''
+        """
         self.estimation = val
 
     def __getitem__(self, param):
-        '''
+        """
         Для быстрого доступа к любому из дочерних узлов дерева (не обязательно
         прямых потомков) по названию можно использовать следующий синтаксис:
             >>> T=Tree('tree')
@@ -385,20 +391,16 @@ class Tree(Domain):
             tree - 2.5 (1.0)
             >>> print T['branch 1']
             branch 1 - 2 (1.0)
-        '''
+        """
 ##        print 'im here!'
         return self.childs[param]
 
 
-# XXX интерфейс FES с модельными параметрами и возможностью задания
-# пользовательских и изменения на лету.
-
-from .aggregation import Simple, Tree, Rules
-from .tnorm import MinMax
+# TODO интерфейс FES с модельными параметрами и возможностью задания пользовательских и изменения на лету.
 
 
 class Controller(object):
-    '''
+    """
     Данный класс представляет интерфейс для создания нечеткого контроллера со
     множественными входами и выходами. Входом нечеткого контроллера называется
     лингвистическая переменная, имеющая имя и множество терм-значений
@@ -443,17 +445,17 @@ class Controller(object):
             терм-значений (классификаторы). См. FuzzySet.FuzzySet
         method
         tnorm
-    '''
+    """
 
     def __init__(self, input_=None,
                         out=None,
                         method=Simple(),
                         tnorm=MinMax()):
-        '''
+        """
         Описание
         Синтаксис:
             >>>
-        '''
+        """
 
         if not input_:
             input_ = {}
@@ -469,9 +471,9 @@ class Controller(object):
         self.define_output(out)
 
     def _char(self):
-        '''
+        """
         Функция выводит данные о нечетком контроллере в человеко-читаемом виде.
-        '''
+        """
         print "<Fuzzy controller>"
         for name in self.trees.itervalues():
             for i in name:
@@ -486,22 +488,22 @@ class Controller(object):
         print '</Fuzzy controller>'
 
     def define_input(self, input_):
-        '''
+        """
         Описание
         Синтаксис:
             >>>
-        '''
+        """
         self.inputs = {}
         for name in input_.iterkeys():
             self.inputs[name] = Tree(name=name, clas=input_[name])
         return self
 
     def define_output(self, out):
-        '''
+        """
         Описание
         Синтаксис:
             >>>
-        '''
+        """
         self.trees = {}
         for name in out.iterkeys():
             tree = Tree(name=name,
@@ -514,30 +516,30 @@ class Controller(object):
         return self
 
     def add_input(self, name, clas):
-        '''
+        """
         Описание
         Синтаксис:
             >>>
-        '''
+        """
         self.inputs[name] = Tree(name=name, clas=clas)
 
     def add_output(self, name, clas):
-        '''
+        """
         Описание
         Синтаксис:
             >>>
-        '''
+        """
         tree = Tree(name=name, clas=clas, agg=self.method(), tnorm=self.tnorm)
         for branch in self.inputs.itervalues():
             tree.add(branch)
         self.trees[name] = tree
 
     def define_rules(self, rules):
-        '''
+        """
         Описание
         Синтаксис:
             >>>
-        '''
+        """
         if isinstance(self.method(), rules):
             i = 0
             for rule in rules:
@@ -550,29 +552,29 @@ class Controller(object):
             return self
 
     def add_rule(self, rule, name=''):
-        '''
+        """
         Описание
         Синтаксис:
             >>>
-        '''
+        """
         # TODO
         pass
 
     def set(self, input_values):
-        '''
+        """
         Описание
         Синтаксис:
             >>>
-        '''
+        """
         for name in input_values.iterkeys():
             self.inputs[name].set_estim(input_values[name])
 
     def get(self):
-        '''
+        """
         Описание
         Синтаксис:
             >>>
-        '''
+        """
         res = {}
         for tree in self.trees.itervalues():
             res[tree.name] = tree.get_estim()
@@ -581,6 +583,7 @@ class Controller(object):
         #TODO вывод классификаторов входов
         #TODO вывод классификаторов выходов
         #TODO вывод двумерных графиков
+
 
 if __name__ == "__main__":
     import doctest

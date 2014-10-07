@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>pyinference.fuzzy.domain module &mdash; pyinference 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="pyinference 0.1 documentation" href="index.html" />
+    <link rel="up" title="pyinference.fuzzy package" href="pyinference.fuzzy.html" />
+    <link rel="next" title="pyinference.fuzzy.set module" href="pyinference.fuzzy.set.html" />
+    <link rel="prev" title="pyinference.fuzzy package" href="pyinference.fuzzy.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pyinference.fuzzy.set.html" title="pyinference.fuzzy.set module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="pyinference.fuzzy.html" title="pyinference.fuzzy package"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">pyinference 0.1 documentation</a> &raquo;</li>
+          <li><a href="pyinference.html" >pyinference package</a> &raquo;</li>
+          <li><a href="pyinference.fuzzy.html" accesskey="U">pyinference.fuzzy package</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-pyinference.fuzzy.domain">
+<span id="pyinference-fuzzy-domain-module"></span><h1>pyinference.fuzzy.domain module<a class="headerlink" href="#module-pyinference.fuzzy.domain" title="Permalink to this headline">¶</a></h1>
+<p>Модуль, описывающий различные типы носителей нечетких множеств, а также
+реализующий функциональность нечетких правил логического вывода.</p>
+<dl class="class">
+<dt id="pyinference.fuzzy.domain.Domain">
+<em class="property">class </em><tt class="descclassname">pyinference.fuzzy.domain.</tt><tt class="descname">Domain</tt><a class="reference internal" href="_modules/pyinference/fuzzy/domain.html#Domain"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.domain.Domain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>Абстрактный класс, реализующий интерфейс носителя нечеткого множества.</p>
+<p>Смысловую нагрузку несут подклассы этого класса,
+представляющие различные виды носителей. Преимуществом такого подхода
+является его универсальность: в качестве носителя при определении
+нечеткого множества можно задавать действительный интервал,
+целочисленный интервал, в принципе, любую итерируемую структуру.</p>
+<dl class="method">
+<dt id="pyinference.fuzzy.domain.Domain.card">
+<tt class="descname">card</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/domain.html#Domain.card"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.domain.Domain.card" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cardinality of the domain</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyinference.fuzzy.domain.Domain.char">
+<tt class="descname">char</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/domain.html#Domain.char"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.domain.Domain.char" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pyinference.fuzzy.domain.IntegerRange">
+<em class="property">class </em><tt class="descclassname">pyinference.fuzzy.domain.</tt><tt class="descname">IntegerRange</tt><big>(</big><em>begin=1</em>, <em>end=100</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/domain.html#IntegerRange"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.domain.IntegerRange" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyinference.fuzzy.domain.RationalRange" title="pyinference.fuzzy.domain.RationalRange"><tt class="xref py py-class docutils literal"><span class="pre">pyinference.fuzzy.domain.RationalRange</span></tt></a></p>
+<p>Класс, моделирующий носитель нечеткого множества в виде целочисленного интервала.</p>
+<blockquote>
+<div>По сути, является частным случаем предыдущего класса
+(см. <a class="reference internal" href="#pyinference.fuzzy.domain.RationalRange" title="pyinference.fuzzy.domain.RationalRange"><tt class="xref py py-class docutils literal"><span class="pre">RationalRange</span></tt></a>), когда точность равна разнице границ интервала.</div></blockquote>
+<p>Синтаксис:</p>
+<blockquote>
+<div><div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">B</span><span class="o">=</span><span class="n">IntegerRange</span><span class="p">(</span><span class="n">begin</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="mf">3.0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">B</span><span class="p">:</span> <span class="k">print</span> <span class="n">i</span>
+<span class="go">0</span>
+<span class="go">1</span>
+<span class="go">2</span>
+<span class="go">3</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Attributes:</dt>
+<dd>begin
+end</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="class">
+<dt id="pyinference.fuzzy.domain.RationalRange">
+<em class="property">class </em><tt class="descclassname">pyinference.fuzzy.domain.</tt><tt class="descname">RationalRange</tt><big>(</big><em>begin=0.0</em>, <em>end=1.0</em>, <em>acc=1000</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/domain.html#RationalRange"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.domain.RationalRange" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyinference.fuzzy.domain.Domain" title="pyinference.fuzzy.domain.Domain"><tt class="xref py py-class docutils literal"><span class="pre">pyinference.fuzzy.domain.Domain</span></tt></a></p>
+<p>Данный класс реализует носитель нечеткого подмножества в виде отрезка действительной оси.</p>
+<p>В качестве параметров конструктор класса
+принимает значения начала и конца интервала, а также параметр &#8220;точность&#8221; -
+целое число, определяющее количество проходов при расчете нечетких
+функционалов численным методом. Это число является компромиссом между
+точностью и скоростью подсчета, поэтому там, где это возможно,
+численный расчет нечетких функционалов заменен аналитическими выражениями.</p>
+<p>Синтаксис:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">B</span> <span class="o">=</span> <span class="n">RationalRange</span><span class="p">(</span><span class="n">end</span><span class="o">=</span><span class="mf">3.0</span><span class="p">,</span> <span class="n">acc</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">B</span><span class="p">:</span> <span class="k">print</span> <span class="n">i</span>
+<span class="go">0.0</span>
+<span class="go">1.0</span>
+<span class="go">2.0</span>
+<span class="go">3.0</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">B</span> <span class="o">=</span> <span class="n">RationalRange</span><span class="p">(</span><span class="n">end</span><span class="o">=</span><span class="mf">3.0</span><span class="p">,</span> <span class="n">acc</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">B</span><span class="p">:</span> <span class="k">print</span> <span class="n">i</span>
+<span class="go">0.0</span>
+<span class="go">0.375</span>
+<span class="go">0.75</span>
+<span class="go">1.125</span>
+<span class="go">1.5</span>
+<span class="go">1.875</span>
+<span class="go">2.25</span>
+<span class="go">2.625</span>
+<span class="go">3.0</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Attributes:</dt>
+<dd>begin:
+end:
+acc:</dd>
+</dl>
+<dl class="method">
+<dt id="pyinference.fuzzy.domain.RationalRange.card">
+<tt class="descname">card</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/domain.html#RationalRange.card"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.domain.RationalRange.card" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="pyinference.fuzzy.html"
+                        title="previous chapter">pyinference.fuzzy package</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pyinference.fuzzy.set.html"
+                        title="next chapter">pyinference.fuzzy.set module</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/pyinference.fuzzy.domain.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pyinference.fuzzy.set.html" title="pyinference.fuzzy.set module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="pyinference.fuzzy.html" title="pyinference.fuzzy package"
+             >previous</a> |</li>
+        <li><a href="index.html">pyinference 0.1 documentation</a> &raquo;</li>
+          <li><a href="pyinference.html" >pyinference package</a> &raquo;</li>
+          <li><a href="pyinference.fuzzy.html" >pyinference.fuzzy package</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, sejros.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+    </div>
+  </body>
+</html>
