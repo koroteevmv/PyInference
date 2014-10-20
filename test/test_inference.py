@@ -3,9 +3,9 @@
 import unittest
 import numpy as np
 
-from pyinference.inference.Factor import Factor
-from pyinference.inference.Net import Net
-from pyinference.inference.Variable import Variable
+from pyinference.inference.factor import Factor
+from pyinference.inference.net import Net
+from pyinference.inference.variable import Variable
 from pyinference.fuzzy.set import Partition
 
 
