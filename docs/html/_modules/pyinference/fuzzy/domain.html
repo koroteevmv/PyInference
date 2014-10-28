@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>pyinference.fuzzy.domain &mdash; pyinference 0.1 documentation</title>
+    <title>pyinference.fuzzy.domain &mdash; pyinference 0.4.0 documentation</title>
     
     <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '0.1',
+        VERSION:     '0.4.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <link rel="top" title="pyinference 0.1 documentation" href="../../../index.html" />
+    <link rel="top" title="pyinference 0.4.0 documentation" href="../../../index.html" />
     <link rel="up" title="Module code" href="../../index.html" /> 
   </head>
   <body>
@@ -36,7 +36,7 @@
         <li class="right" >
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="../../../index.html">pyinference 0.1 documentation</a> &raquo;</li>
+        <li><a href="../../../index.html">pyinference 0.4.0 documentation</a> &raquo;</li>
           <li><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -55,7 +55,7 @@
 <span class="kn">import</span> <span class="nn">pyinference.fuzzy</span>
 
 
-<div class="viewcode-block" id="Domain"><a class="viewcode-back" href="../../../pyinference.fuzzy.domain.html#pyinference.fuzzy.domain.Domain">[docs]</a><span class="k">class</span> <span class="nc">Domain</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="Domain"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.domain.Domain">[docs]</a><span class="k">class</span> <span class="nc">Domain</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Абстрактный класс, реализующий интерфейс носителя нечеткого множества.</span>
 
 <span class="sd">    Смысловую нагрузку несут подклассы этого класса,</span>
@@ -70,17 +70,17 @@
     <span class="k">def</span> <span class="nf">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">pass</span>
 
-<div class="viewcode-block" id="Domain.char"><a class="viewcode-back" href="../../../pyinference.fuzzy.domain.html#pyinference.fuzzy.domain.Domain.char">[docs]</a>    <span class="k">def</span> <span class="nf">char</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Domain.char"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.domain.Domain.char">[docs]</a>    <span class="k">def</span> <span class="nf">char</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
             <span class="k">print</span> <span class="n">i</span>
 </div>
-<div class="viewcode-block" id="Domain.card"><a class="viewcode-back" href="../../../pyinference.fuzzy.domain.html#pyinference.fuzzy.domain.Domain.card">[docs]</a>    <span class="k">def</span> <span class="nf">card</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Domain.card"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.domain.Domain.card">[docs]</a>    <span class="k">def</span> <span class="nf">card</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Cardinality of the domain</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">pass</span>
 
 </div></div>
-<div class="viewcode-block" id="RationalRange"><a class="viewcode-back" href="../../../pyinference.fuzzy.domain.html#pyinference.fuzzy.domain.RationalRange">[docs]</a><span class="k">class</span> <span class="nc">RationalRange</span><span class="p">(</span><span class="n">Domain</span><span class="p">):</span>
+<div class="viewcode-block" id="RationalRange"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.domain.RationalRange">[docs]</a><span class="k">class</span> <span class="nc">RationalRange</span><span class="p">(</span><span class="n">Domain</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Данный класс реализует носитель нечеткого подмножества в виде отрезка действительной оси.</span>
 
 <span class="sd">    В качестве параметров конструктор класса</span>
@@ -134,7 +134,7 @@
                 <span class="k">yield</span> <span class="n">i</span>
                 <span class="n">i</span> <span class="o">+=</span> <span class="n">delta</span>
 
-<div class="viewcode-block" id="RationalRange.card"><a class="viewcode-back" href="../../../pyinference.fuzzy.domain.html#pyinference.fuzzy.domain.RationalRange.card">[docs]</a>    <span class="k">def</span> <span class="nf">card</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="RationalRange.card"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.domain.RationalRange.card">[docs]</a>    <span class="k">def</span> <span class="nf">card</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 </div>
     <span class="k">def</span> <span class="nf">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -149,7 +149,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">card</span><span class="p">()</span>
 
 </div>
-<div class="viewcode-block" id="IntegerRange"><a class="viewcode-back" href="../../../pyinference.fuzzy.domain.html#pyinference.fuzzy.domain.IntegerRange">[docs]</a><span class="k">class</span> <span class="nc">IntegerRange</span><span class="p">(</span><span class="n">RationalRange</span><span class="p">):</span>
+<div class="viewcode-block" id="IntegerRange"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.domain.IntegerRange">[docs]</a><span class="k">class</span> <span class="nc">IntegerRange</span><span class="p">(</span><span class="n">RationalRange</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Класс, моделирующий носитель нечеткого множества в виде целочисленного интервала.</span>
 
 <span class="sd">    По сути, является частным случаем предыдущего класса</span>
@@ -215,13 +215,13 @@
         <li class="right" >
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="../../../index.html">pyinference 0.1 documentation</a> &raquo;</li>
+        <li><a href="../../../index.html">pyinference 0.4.0 documentation</a> &raquo;</li>
           <li><a href="../../index.html" >Module code</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2014, sejros.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
     </div>
   </body>
 </html>

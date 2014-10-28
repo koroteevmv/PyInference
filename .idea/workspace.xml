@@ -6,7 +6,135 @@
     <option name="CUSTOM_SCOPE_NAME" value="Current File" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cd9f65ab-b55a-4847-bcc9-c7916ba7e1ec" name="Default" comment="" />
+    <list default="true" id="cd9f65ab-b55a-4847-bcc9-c7916ba7e1ec" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/epub/.buildinfo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/epub/.doctrees/environment.pickle" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/epub/.doctrees/index.doctree" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/epub/.doctrees/modules.doctree" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/epub/.doctrees/pyinference.doctree" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/epub/.doctrees/pyinference.fuzzy.doctree" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/epub/.doctrees/pyinference.fuzzy.domain.doctree" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/epub/.doctrees/pyinference.fuzzy.set.doctree" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/epub/.doctrees/pyinference.fuzzy.subset.doctree" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/epub/.doctrees/pyinference.fuzzy.tnorm.doctree" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/epub/.doctrees/pyinference.inference.doctree" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/epub/META-INF/container.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/epub/_modules/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/epub/_modules/pyinference/fuzzy/domain.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/epub/_modules/pyinference/fuzzy/set.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/epub/_modules/pyinference/fuzzy/subset.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/epub/_modules/pyinference/fuzzy/tnorm.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/epub/_modules/pyinference/inference.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/epub/_static/ajax-loader.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/epub/_static/basic.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/epub/_static/comment-bright.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/epub/_static/comment-close.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/epub/_static/comment.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/epub/_static/doctools.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/epub/_static/down-pressed.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/epub/_static/down.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/epub/_static/epub.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/epub/_static/file.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/epub/_static/jquery.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/epub/_static/minus.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/epub/_static/plus.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/epub/_static/pygments.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/epub/_static/searchtools.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/epub/_static/underscore.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/epub/_static/up-pressed.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/epub/_static/up.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/epub/_static/websupport.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/epub/content.opf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/epub/genindex.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/epub/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/epub/mimetype" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/epub/modules.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/epub/py-modindex.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/epub/pyinference.epub" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/epub/pyinference.fuzzy.domain.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/epub/pyinference.fuzzy.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/epub/pyinference.fuzzy.set.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/epub/pyinference.fuzzy.subset.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/epub/pyinference.fuzzy.tnorm.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/epub/pyinference.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/epub/pyinference.inference.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/epub/search.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/epub/toc.ncx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/html/_sources/modules.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/html/_sources/pyinference.fuzzy.domain.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/html/_sources/pyinference.fuzzy.set.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/html/_sources/pyinference.fuzzy.subset.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/html/_sources/pyinference.fuzzy.tnorm.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/html/modules.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/html/pyinference.fuzzy.domain.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/html/pyinference.fuzzy.set.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/html/pyinference.fuzzy.subset.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/html/pyinference.fuzzy.tnorm.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/rst/modules.rst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/rst/pyinference.fuzzy.domain.rst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/rst/pyinference.fuzzy.set.rst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/rst/pyinference.fuzzy.subset.rst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/rst/pyinference.fuzzy.tnorm.rst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/inference.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/test.py" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/html/.doctrees/environment.pickle" afterPath="$PROJECT_DIR$/docs/html/.doctrees/environment.pickle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/singlehtml/.doctrees/environment.pickle" afterPath="$PROJECT_DIR$/docs/singlehtml/.doctrees/environment.pickle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/html/.doctrees/index.doctree" afterPath="$PROJECT_DIR$/docs/html/.doctrees/index.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/singlehtml/.doctrees/index.doctree" afterPath="$PROJECT_DIR$/docs/singlehtml/.doctrees/index.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/html/objects.inv" afterPath="$PROJECT_DIR$/docs/html/objects.inv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/singlehtml/objects.inv" afterPath="$PROJECT_DIR$/docs/singlehtml/objects.inv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/html/.doctrees/pyinference.doctree" afterPath="$PROJECT_DIR$/docs/html/.doctrees/pyinference.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/singlehtml/.doctrees/pyinference.doctree" afterPath="$PROJECT_DIR$/docs/singlehtml/.doctrees/pyinference.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/html/.doctrees/pyinference.fuzzy.doctree" afterPath="$PROJECT_DIR$/docs/html/.doctrees/pyinference.fuzzy.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/singlehtml/.doctrees/pyinference.fuzzy.doctree" afterPath="$PROJECT_DIR$/docs/singlehtml/.doctrees/pyinference.fuzzy.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/html/.doctrees/pyinference.fuzzy.set.doctree" afterPath="$PROJECT_DIR$/docs/html/.doctrees/pyinference.fuzzy.set.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/html/.doctrees/pyinference.fuzzy.subset.doctree" afterPath="$PROJECT_DIR$/docs/html/.doctrees/pyinference.fuzzy.subset.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/html/.doctrees/pyinference.fuzzy.tnorm.doctree" afterPath="$PROJECT_DIR$/docs/html/.doctrees/pyinference.fuzzy.tnorm.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/html/.doctrees/pyinference.inference.doctree" afterPath="$PROJECT_DIR$/docs/html/.doctrees/pyinference.inference.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/singlehtml/.doctrees/pyinference.inference.doctree" afterPath="$PROJECT_DIR$/docs/singlehtml/.doctrees/pyinference.inference.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/html/.buildinfo" afterPath="$PROJECT_DIR$/docs/html/.buildinfo" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/singlehtml/.buildinfo" afterPath="$PROJECT_DIR$/docs/singlehtml/.buildinfo" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pyinference/__init__.py" afterPath="$PROJECT_DIR$/pyinference/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/html/_static/basic.css" afterPath="$PROJECT_DIR$/docs/html/_static/basic.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/rst/conf.py" afterPath="$PROJECT_DIR$/docs/rst/conf.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/html/_static/default.css" afterPath="$PROJECT_DIR$/docs/html/_static/default.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/html/_static/doctools.js" afterPath="$PROJECT_DIR$/docs/html/_static/doctools.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/html/_modules/pyinference/fuzzy/domain.html" afterPath="$PROJECT_DIR$/docs/html/_modules/pyinference/fuzzy/domain.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/html/genindex.html" afterPath="$PROJECT_DIR$/docs/html/genindex.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/html/index.html" afterPath="$PROJECT_DIR$/docs/html/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/html/_modules/index.html" afterPath="$PROJECT_DIR$/docs/html/_modules/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/singlehtml/index.html" afterPath="$PROJECT_DIR$/docs/singlehtml/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/rst/index.rst" afterPath="$PROJECT_DIR$/docs/rst/index.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/html/_sources/index.txt" afterPath="$PROJECT_DIR$/docs/html/_sources/index.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/html/_modules/pyinference/inference.html" afterPath="$PROJECT_DIR$/docs/html/_modules/pyinference/inference.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/html/_static/jquery.js" afterPath="$PROJECT_DIR$/docs/html/_static/jquery.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/singlehtml/_static/jquery.js" afterPath="$PROJECT_DIR$/docs/singlehtml/_static/jquery.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/html/py-modindex.html" afterPath="$PROJECT_DIR$/docs/html/py-modindex.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/html/_static/pygments.css" afterPath="$PROJECT_DIR$/docs/html/_static/pygments.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/singlehtml/_static/pygments.css" afterPath="$PROJECT_DIR$/docs/singlehtml/_static/pygments.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/html/pyinference.fuzzy.html" afterPath="$PROJECT_DIR$/docs/html/pyinference.fuzzy.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/rst/pyinference.fuzzy.rst" afterPath="$PROJECT_DIR$/docs/rst/pyinference.fuzzy.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/html/_sources/pyinference.fuzzy.txt" afterPath="$PROJECT_DIR$/docs/html/_sources/pyinference.fuzzy.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/html/pyinference.html" afterPath="$PROJECT_DIR$/docs/html/pyinference.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/html/pyinference.inference.html" afterPath="$PROJECT_DIR$/docs/html/pyinference.inference.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/rst/pyinference.inference.rst" afterPath="$PROJECT_DIR$/docs/rst/pyinference.inference.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/html/_sources/pyinference.inference.txt" afterPath="$PROJECT_DIR$/docs/html/_sources/pyinference.inference.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/rst/pyinference.rst" afterPath="$PROJECT_DIR$/docs/rst/pyinference.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/html/_sources/pyinference.txt" afterPath="$PROJECT_DIR$/docs/html/_sources/pyinference.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/html/search.html" afterPath="$PROJECT_DIR$/docs/html/search.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/html/searchindex.js" afterPath="$PROJECT_DIR$/docs/html/searchindex.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/html/_static/searchtools.js" afterPath="$PROJECT_DIR$/docs/html/_static/searchtools.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/html/_modules/pyinference/fuzzy/set.html" afterPath="$PROJECT_DIR$/docs/html/_modules/pyinference/fuzzy/set.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/setup.py" afterPath="$PROJECT_DIR$/setup.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/html/_static/sidebar.js" afterPath="$PROJECT_DIR$/docs/html/_static/sidebar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/html/_modules/pyinference/fuzzy/subset.html" afterPath="$PROJECT_DIR$/docs/html/_modules/pyinference/fuzzy/subset.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/test_inference.py" afterPath="$PROJECT_DIR$/test/test_inference.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/html/_modules/pyinference/fuzzy/tnorm.html" afterPath="$PROJECT_DIR$/docs/html/_modules/pyinference/fuzzy/tnorm.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/html/_static/underscore.js" afterPath="$PROJECT_DIR$/docs/html/_static/underscore.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/singlehtml/_static/underscore.js" afterPath="$PROJECT_DIR$/docs/singlehtml/_static/underscore.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/html/_static/websupport.js" afterPath="$PROJECT_DIR$/docs/html/_static/websupport.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="PyInference.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,54 +156,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="__init__.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pyinference/inference/__init__.py">
+      <file leaf-file-name="setup.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/setup.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="4333" max-vertical-offset="4947">
-              <caret line="280" column="0" selection-start-line="280" selection-start-column="0" selection-end-line="280" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Variable.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pyinference/inference/Variable.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2055" max-vertical-offset="2652">
-              <caret line="131" column="15" selection-start-line="131" selection-start-column="15" selection-end-line="131" selection-end-column="15" />
+            <state vertical-scroll-proportion="0.8396226" vertical-offset="422" max-vertical-offset="969">
+              <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
               <folding>
-                <element signature="e#16#34#0" expanded="true" />
-                <marker date="1413535017460" expanded="true" signature="2229:2257" placeholder="import ..." />
-                <marker date="1413535017460" expanded="true" signature="4196:4242" placeholder="import ..." />
-                <marker date="1413535017460" expanded="true" signature="4196:4287" placeholder="import ..." />
-                <marker date="1413535017460" expanded="true" signature="4196:4296" placeholder="import ..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Factor.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pyinference/inference/Factor.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="6390" max-vertical-offset="6936">
-              <caret line="402" column="0" selection-start-line="402" selection-start-column="0" selection-end-line="402" selection-end-column="0" />
-              <folding>
-                <element signature="e#16#53#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Net.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pyinference/inference/Net.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0970696" vertical-offset="3381" max-vertical-offset="3927">
-              <caret line="202" column="0" selection-start-line="202" selection-start-column="0" selection-end-line="202" selection-end-column="0" />
-              <folding>
-                <marker date="1413535810785" expanded="true" signature="3088:3230" placeholder="import ..." />
-                <marker date="1413535810785" expanded="true" signature="4761:4911" placeholder="import ..." />
-                <marker date="1413535810785" expanded="true" signature="6653:6803" placeholder="import ..." />
-                <marker date="1413535810785" expanded="true" signature="8379:8529" placeholder="import ..." />
+                <element signature="e#16#48#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -87,6 +174,9 @@
     <FindUsagesManager>
       <setting name="OPEN_NEW_TAB" value="true" />
     </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
@@ -117,28 +207,30 @@
         <option value="$PROJECT_DIR$/inference/__init__.py" />
         <option value="$PROJECT_DIR$/inference/variable.py" />
         <option value="$PROJECT_DIR$/inference/factor.py" />
-        <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/pyinference/fuzzy/set.py" />
         <option value="$PROJECT_DIR$/pyinference/fuzzy/subset.py" />
         <option value="$PROJECT_DIR$/partitions.py" />
         <option value="$PROJECT_DIR$/classes.py" />
         <option value="$PROJECT_DIR$/pyinference/fuzzy/domain.py" />
         <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/pyinference/__init__.py" />
         <option value="$PROJECT_DIR$/pyinference/inference/Variable.py" />
         <option value="$PROJECT_DIR$/pyinference/inference/Factor.py" />
         <option value="$PROJECT_DIR$/pyinference/inference.py" />
         <option value="$PROJECT_DIR$/pyinference/inference/__init__.py" />
-        <option value="$PROJECT_DIR$/test/test_inference.py" />
         <option value="$PROJECT_DIR$/pyinference/inference/Net.py" />
+        <option value="$PROJECT_DIR$/pyinference/inference/factor.py" />
+        <option value="$PROJECT_DIR$/pyinference/inference/variable.py" />
+        <option value="$PROJECT_DIR$/pyinference/inference/net.py" />
+        <option value="$PROJECT_DIR$/test/test_inference.py" />
+        <option value="$PROJECT_DIR$/pyinference/__init__.py" />
+        <option value="$PROJECT_DIR$/setup.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="y" value="-28" />
+    <option name="width" value="1440" />
+    <option name="height" value="928" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -171,7 +263,7 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -197,35 +289,6 @@
       <sortByType ProjectPane="true" />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Problems" />
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="PyInference">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="PyInference">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="fuzzy">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -268,30 +331,37 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="pyinference" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="inference" />
+              <option name="myItemId" value="examples" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Problems" />
+        <subPane subId="Project Files">
           <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PyInference" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PyInference" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            <PATH_ELEMENT USER_OBJECT="PyInference">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pyinference" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fuzzy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            <PATH_ELEMENT USER_OBJECT="PyInference">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="fuzzy">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -300,7 +370,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors.Console Colors" />
     <property name="options.splitter.main.proportions" value="0.18315972" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
@@ -372,22 +442,6 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="PyInference" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <method />
-    </configuration>
     <configuration default="true" type="docs" factoryName="Docutils task">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -403,6 +457,22 @@
       <option name="docutils_params" value="" />
       <option name="docutils_task" value="rst2odt" />
       <option name="docutils_open_in_browser" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="PyInference" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
       <method />
     </configuration>
     <configuration default="true" type="docs" factoryName="Sphinx task">
@@ -504,14 +574,14 @@
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
-      <option name="SDK_HOME" value="C:\Python27\python.exe" />
+      <option name="SDK_HOME" value="/usr/bin/python2.7" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="PyInference" />
-      <option name="docutils_input_file" value="C:\Users\sejros\Dropbox\PyInference\docs\rst" />
-      <option name="docutils_output_file" value="C:\Users\sejros\Dropbox\PyInference\docs\html" />
+      <option name="docutils_input_file" value="$PROJECT_DIR$/docs/rst" />
+      <option name="docutils_output_file" value="$PROJECT_DIR$/docs/html" />
       <option name="docutils_params" value="" />
       <option name="docutils_task" value="html" />
       <option name="docutils_open_in_browser" value="false" />
@@ -523,14 +593,14 @@
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
-      <option name="SDK_HOME" value="C:\Python27\python.exe" />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="PyInference" />
-      <option name="docutils_input_file" value="C:\Users\sejros\Dropbox\PyInference\docs\rst" />
-      <option name="docutils_output_file" value="C:\Users\sejros\Dropbox\PyInference\docs\singlehtml" />
+      <option name="docutils_input_file" value="$PROJECT_DIR$/docs/rst" />
+      <option name="docutils_output_file" value="$PROJECT_DIR$/docs/singlehtml" />
       <option name="docutils_params" value="" />
       <option name="docutils_task" value="singlehtml" />
       <option name="docutils_open_in_browser" value="false" />
@@ -542,9 +612,9 @@
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
-      <option name="SDK_HOME" value="C:\Python27\python.exe" />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="PyInference" />
@@ -734,9 +804,14 @@
       <created>1411233531145</created>
       <updated>1411233531145</updated>
     </task>
+    <task id="LOCAL-00001" summary="unittest everything">
+      <created>1413834381614</created>
+      <updated>1413834381614</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
-  <component name="TodoView" selected-index="1">
+  <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
       <are-packages-shown value="false" />
       <are-modules-shown value="false" />
@@ -757,23 +832,24 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="0" y="-28" width="1440" height="928" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31957546" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43997073" sideWeight="0.50096714" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3253833" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.7035775" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32429245" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19742814" sideWeight="0.49842766" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22012103" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16427547" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41396934" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19985673" sideWeight="0.5006954" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.237691" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" x="0" y="251" width="1366" height="226" />
-      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3804841" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" x="445" y="46" width="476" height="636" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2370283" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" x="0" y="251" width="1366" height="226" />
+      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39096126" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" x="445" y="46" width="476" height="636" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900944" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.58383685" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="92" y="92" width="1182" height="544" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.7035775" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.51443124" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -795,6 +871,9 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
+    <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="false" />
+    <MESSAGE value="unittest everything" />
+    <option name="LAST_COMMIT_MESSAGE" value="unittest everything" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -802,53 +881,11 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test.py">
+    <entry file="file://$PROJECT_DIR$/pyinference/inference/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="527">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding>
-            <element signature="e#16#34#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="527">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding>
-            <element signature="e#16#34#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="527">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding>
-            <element signature="e#16#34#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="378" max-vertical-offset="558">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding>
-            <element signature="e#16#34#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="527">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding>
-            <element signature="e#16#34#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4656">
+          <caret line="280" column="0" selection-start-line="280" selection-start-column="0" selection-end-line="280" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -894,20 +931,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pycharm/docrunner.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1943" max-vertical-offset="5814">
-          <caret line="128" column="0" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/setup.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.660746" vertical-offset="389" max-vertical-offset="952">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/test_set.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2092" max-vertical-offset="2754">
@@ -922,38 +945,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pyinference/fuzzy/subset.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21288015" vertical-offset="51" max-vertical-offset="10489">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/test_subset.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.21288015" vertical-offset="0" max-vertical-offset="5236">
           <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/infer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="9180" max-vertical-offset="10115">
-          <caret line="553" column="8" selection-start-line="553" selection-start-column="8" selection-end-line="553" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2771" max-vertical-offset="3774">
-          <caret line="157" column="0" selection-start-line="157" selection-start-column="0" selection-end-line="157" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mamdani.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1055" max-vertical-offset="2618">
-          <caret line="111" column="0" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -964,96 +959,122 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pyinference/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33392859" vertical-offset="0" max-vertical-offset="560">
-          <caret line="11" column="104" selection-start-line="11" selection-start-column="104" selection-end-line="11" selection-end-column="104" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5604396" vertical-offset="0" max-vertical-offset="546">
-          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
-          <folding>
-            <element signature="e#16#34#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pyinference/fuzzy/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="546">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/Lib/site-packages/numpy/core/fromnumeric.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.332696" vertical-offset="5572" max-vertical-offset="49589">
-          <caret line="346" column="4" selection-start-line="346" selection-start-column="4" selection-end-line="346" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inference.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3272727" vertical-offset="168" max-vertical-offset="2652">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/test_inference.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22753346" vertical-offset="0" max-vertical-offset="2363">
-          <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pyinference/inference/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4333" max-vertical-offset="4947">
+        <state vertical-scroll-proportion="0.80508476" vertical-offset="3910" max-vertical-offset="4656">
           <caret line="280" column="0" selection-start-line="280" selection-start-column="0" selection-end-line="280" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pyinference/inference/Variable.py">
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pycharm/docrunner.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2055" max-vertical-offset="2652">
-          <caret line="131" column="15" selection-start-line="131" selection-start-column="15" selection-end-line="131" selection-end-column="15" />
-          <folding>
-            <element signature="e#16#34#0" expanded="true" />
-            <marker date="1413535017460" expanded="true" signature="2229:2257" placeholder="import ..." />
-            <marker date="1413535017460" expanded="true" signature="4196:4242" placeholder="import ..." />
-            <marker date="1413535017460" expanded="true" signature="4196:4287" placeholder="import ..." />
-            <marker date="1413535017460" expanded="true" signature="4196:4296" placeholder="import ..." />
-          </folding>
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="1865" max-vertical-offset="5814">
+          <caret line="128" column="0" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pyinference/inference/Factor.py">
+    <entry file="file://$PROJECT_DIR$/pyinference/inference/factor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="6390" max-vertical-offset="6936">
-          <caret line="402" column="0" selection-start-line="402" selection-start-column="0" selection-end-line="402" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6936">
+          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
           <folding>
             <element signature="e#16#53#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pyinference/inference/Net.py">
+    <entry file="file://$PROJECT_DIR$/pyinference/inference/variable.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0970696" vertical-offset="3381" max-vertical-offset="3927">
-          <caret line="202" column="0" selection-start-line="202" selection-start-column="0" selection-end-line="202" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1855" max-vertical-offset="2635">
+          <caret line="141" column="46" selection-start-line="141" selection-start-column="46" selection-end-line="141" selection-end-column="46" />
           <folding>
-            <marker date="1413535810785" expanded="true" signature="3088:3230" placeholder="import ..." />
-            <marker date="1413535810785" expanded="true" signature="4761:4911" placeholder="import ..." />
-            <marker date="1413535810785" expanded="true" signature="6653:6803" placeholder="import ..." />
-            <marker date="1413535810785" expanded="true" signature="8379:8529" placeholder="import ..." />
+            <marker date="1413833667944" expanded="true" signature="-1:-1" placeholder="import ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyinference/inference/net.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.6784842" vertical-offset="0" max-vertical-offset="3927">
+          <caret line="177" column="32" selection-start-line="177" selection-start-column="32" selection-end-line="177" selection-end-column="32" />
+          <folding>
+            <marker date="1413833686008" expanded="true" signature="-1:-1" placeholder="import ..." />
+            <marker date="1413833686008" expanded="true" signature="-1:-1" placeholder="import ..." />
+            <marker date="1413833686008" expanded="true" signature="-1:-1" placeholder="import ..." />
+            <marker date="1413833686008" expanded="true" signature="-1:-1" placeholder="import ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/test_inference.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="1553" max-vertical-offset="2380">
+          <caret line="102" column="43" selection-start-line="102" selection-start-column="43" selection-end-line="102" selection-end-column="43" />
+          <folding>
+            <element signature="e#16#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/mamdani.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2618">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding>
+            <element signature="e#16#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyinference/fuzzy/subset.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8139963" vertical-offset="408" max-vertical-offset="10489">
+          <caret line="50" column="24" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="24" />
+          <folding>
+            <element signature="e#120#151#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/infer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="8.17127" vertical-offset="1224" max-vertical-offset="10115">
+          <caret line="335" column="15" selection-start-line="335" selection-start-column="15" selection-end-line="335" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/classes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3774">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyinference/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.545283" vertical-offset="0" max-vertical-offset="530">
+          <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8396226" vertical-offset="422" max-vertical-offset="969">
+          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+          <folding>
+            <element signature="e#16#48#0" expanded="true" />
           </folding>
         </state>
       </provider>

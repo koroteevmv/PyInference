@@ -1,7 +1,7 @@
 # coding=utf-8
 
 from numpy import repeat, ones, array
-from pyinference.inference.Variable import Variable
+from pyinference.inference.variable import Variable
 
 __author__ = 'sejros'
 

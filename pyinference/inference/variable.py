@@ -40,7 +40,7 @@ class Variable(object):
     которые она может принимать. Мощность бинарной переменной равна двум.
 
     Синтаксис:
-        >>> import pyinference.inference.Variable
+        >>> import pyinference.inference.variable
         >>> a = Variable(name='a', terms=[0, 1])
         >>> a.value = 'low'
 
@@ -92,7 +92,7 @@ class Variable(object):
         Данный метод принимает некое значение и вычисляет меру сходства его со значением атрибута `value`.
 
         Синтаксис:
-            >>> import pyinference.inference.Variable
+            >>> import pyinference.inference.variable
             >>> a = Variable(name='a', terms=[0, 1])
             >>> a.value = 'low'
             >>> '%.2f' % a.equals('low')
@@ -101,7 +101,7 @@ class Variable(object):
             '0.00'
 
             >>> from pyinference.fuzzy import set as fuzzy_set
-            >>> import pyinference.inference.Variable
+            >>> import pyinference.inference.variable
             >>> fs = fuzzy_set.Partition(peaks=[0.0, 0.5, 1.0])
             >>> b = Variable(name='B', terms=fs)
             >>> b.value = 0.5
@@ -139,7 +139,7 @@ class Variable(object):
         """ Краткое текстовое представление перееменной.
 
         Синтаксис:
-            >>> import pyinference.inference.Variable
+            >>> import pyinference.inference.variable
             >>> a = Variable(name='A', terms=[0, 1])
             >>> print a
             A

@@ -51,8 +51,8 @@ class Net(object):
 
     Синтаксис:
         >>> import numpy as np
-        >>> from pyinference.inference.Variable import Variable
-        >>> from pyinference.inference.Factor import Factor
+        >>> from pyinference.inference.variable import Variable
+        >>> from pyinference.inference.factor import Factor
         >>> c = Variable(name='C', terms=['no', 'yes'])
         >>> t = Variable(name='T', terms=['pos', 'neg'])
         >>> c_node = Factor(name='C', cons=[c])
@@ -93,8 +93,8 @@ class Net(object):
 
         Синтаксис:
             >>> import numpy as np
-            >>> from pyinference.inference.Variable import Variable
-            >>> from pyinference.inference.Factor import Factor
+            >>> from pyinference.inference.variable import Variable
+            >>> from pyinference.inference.factor import Factor
             >>> c = Variable(name='C', terms=['no', 'yes'])
             >>> t = Variable(name='T', terms=['pos', 'neg'])
             >>> c_node = Factor(name='C', cons=[c])
@@ -135,8 +135,8 @@ class Net(object):
 
         Синтаксис:
             >>> import numpy as np
-            >>> from pyinference.inference.Variable import Variable
-            >>> from pyinference.inference.Factor import Factor
+            >>> from pyinference.inference.variable import Variable
+            >>> from pyinference.inference.factor import Factor
             >>> c = Variable(name='C', terms=['no', 'yes'])
             >>> t = Variable(name='T', terms=['pos', 'neg'])
             >>> c_node = Factor(name='C', cons=[c])
@@ -179,8 +179,8 @@ class Net(object):
 
         Синтаксис:
             >>> import numpy as np
-            >>> from pyinference.inference.Variable import Variable
-            >>> from pyinference.inference.Factor import Factor
+            >>> from pyinference.inference.variable import Variable
+            >>> from pyinference.inference.factor import Factor
             >>> c = Variable(name='C', terms=['no', 'yes'])
             >>> t = Variable(name='T', terms=['pos', 'neg'])
             >>> c_node = Factor(name='C', cons=[c])

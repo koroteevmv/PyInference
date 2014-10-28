@@ -1,0 +1,320 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>pyinference.inference.net &mdash; pyinference 0.4.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="pyinference 0.4.0 documentation" href="../../../index.html" />
+    <link rel="up" title="pyinference.inference" href="../inference.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">pyinference 0.4.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >Module code</a> &raquo;</li>
+          <li><a href="../inference.html" accesskey="U">pyinference.inference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for pyinference.inference.net</h1><div class="highlight"><pre>
+<span class="c"># coding=utf-8</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s">&#39;sejros&#39;</span>
+
+
+<span class="k">class</span> <span class="nc">_Node</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">parents</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">conditional</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">uncond</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
+
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+
+
+<div class="viewcode-block" id="Net"><a class="viewcode-back" href="../../../pyinference.inference.html#pyinference.inference.net.Net">[docs]</a><span class="k">class</span> <span class="nc">Net</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Данный класс реализует смешанную сеть вывода.</span>
+
+<span class="sd">    Основным назначением данного класса является выполнение запросов к сети.</span>
+<span class="sd">    Сеть формируется как набор факторов, характеризующих совместное распределение значений некоторого набора переменных.</span>
+
+<span class="sd">    Сети Байса традиционно представляются в виде графа, в котором вершины представляют переменные, входящие в сеть,</span>
+<span class="sd">    а ребра – причинно-следственные связи, причем ребро направлено от причины к следствию. Это очень наглядное</span>
+<span class="sd">    представление является одним из главных достоинств вероятностных графических моделей и позволяет отобразить</span>
+<span class="sd">    условную вероятность в виде взаимосвязей переменных и факторов, а также зачастую построить граф по экспертным или</span>
+<span class="sd">    эмпирическим данным для моделирования распределения вероятностей. В графе наглядно видна иерархичность условной</span>
+<span class="sd">    вероятности. Если некая переменная X зависит от переменной Y, то переменная Y будет среди родителей переменной X</span>
+<span class="sd">    на графе.</span>
+
+<span class="sd">    Запрос к байесовской сети выглядит следующим образом: каково распределение полной вероятности набора переменных Q,</span>
+<span class="sd">    при условии, что набор переменных E принимает назначение q? Множество переменных Q называется запросом (query) или</span>
+<span class="sd">    целевыми переменными и может состоять из одной и более переменных. Множество условий E называется</span>
+<span class="sd">    наблюдения (evidence) или наблюдаемыми переменными и, в общем случае, может быть пустым. Множества Q и E не должны</span>
+<span class="sd">    пересекаться. Множество переменных, входящих в байесовскую сеть, но не входящих во множества Q и E называется</span>
+<span class="sd">    скрытые (hidden) переменные. Семантика этих множеств довольно очевидна. Запрос – это целевые переменные, которые</span>
+<span class="sd">    нас интересуют, исходя из контекста конкретной задачи. Наблюдение – это те переменные, значения которых мы можем</span>
+<span class="sd">    измерить или предсказать. Скрытые переменные не являются ни тем, ни другим, но могут оказывать неявное влияние на</span>
+<span class="sd">    запрос и/или на наблюдения. В таких обозначениях использование сети Байеса для логического вывода сводится к</span>
+<span class="sd">    вычислению вероятности P(Q|E).</span>
+
+<span class="sd">    Достоинством сетей Байеса является универсальность. Единожды сконструированная, сеть может использоваться для</span>
+<span class="sd">    вычисления любых корректных запросов на области ее определения, то есть не нужно изменять конструкцию сети,</span>
+<span class="sd">    чтобы выполнять запросы определенного вида. Запрос является корректным, если выполняются два условия:</span>
+<span class="sd">    - все переменные входящие в множества наблюдений и запросов входят в область определения сети;</span>
+<span class="sd">    - множества Q и E не пересекаются.</span>
+
+<span class="sd">    Итак, каждый запрос разбивает множество переменных области определения сети на три непересекающихся множества:</span>
+<span class="sd">    Q, E и H. Значение любого запроса к Байсовской сети на этих множествах может быть вычислен только из фактора,</span>
+<span class="sd">    представляющего распределение полной вероятности P(Q,E,H).</span>
+
+<span class="sd">    Синтаксис:</span>
+<span class="sd">        &gt;&gt;&gt; import numpy as np</span>
+<span class="sd">        &gt;&gt;&gt; from pyinference.inference.variable import Variable</span>
+<span class="sd">        &gt;&gt;&gt; from pyinference.inference.factor import Factor</span>
+<span class="sd">        &gt;&gt;&gt; c = Variable(name=&#39;C&#39;, terms=[&#39;no&#39;, &#39;yes&#39;])</span>
+<span class="sd">        &gt;&gt;&gt; t = Variable(name=&#39;T&#39;, terms=[&#39;pos&#39;, &#39;neg&#39;])</span>
+<span class="sd">        &gt;&gt;&gt; c_node = Factor(name=&#39;C&#39;, cons=[c])</span>
+<span class="sd">        &gt;&gt;&gt; c_node.cpd = np.array([0.99, 0.01])</span>
+<span class="sd">        &gt;&gt;&gt; t_node = Factor(name=&#39;T|C&#39;, cons=[t], cond=[c])</span>
+<span class="sd">        &gt;&gt;&gt; t_node.cpd = np.array([[0.2, 0.8], [0.9, 0.1]])</span>
+<span class="sd">        &gt;&gt;&gt; bn = Net(name=&#39;Cancer&#39;, nodes=[c_node, t_node])</span>
+
+<span class="sd">    Поля класса:</span>
+<span class="sd">        name (`str`): имя сети;</span>
+
+<span class="sd">        nodes(`list`): список факторов, составляющих сеть.</span>
+
+<span class="sd">    Именованные параметры:</span>
+<span class="sd">        name (`str`): имя сети;</span>
+
+<span class="sd">        nodes (`list`): список факторов, составляющих сеть.</span>
+<span class="sd">            Передача конструктору списока ``bn = Node(name=&#39;sample net&#39;, nodes=a_list)`` эквивалентна использованию</span>
+<span class="sd">            метода :func:`add_node`::</span>
+
+<span class="sd">                bn = Net(name=&#39;sample net&#39;)</span>
+<span class="sd">                for node in a_list:</span>
+<span class="sd">                    bn.add_node(node)</span>
+
+<span class="sd">            Поэтому при использовании конструктора может генерироваться исключение метода :func:`add_node`.</span>
+<span class="sd">            В частности, такое может произойти при неверном порядке факторов в передаваемом списке. Поэтому,</span>
+<span class="sd">            рекомендуется использовать конструктор без второго параметра, а факторы в сеть добавлять явно.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">,</span> <span class="n">nodes</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nodes</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="p">(</span><span class="n">nodes</span> <span class="ow">or</span> <span class="p">[]):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Net.joint"><a class="viewcode-back" href="../../../pyinference.inference.html#pyinference.inference.net.Net.joint">[docs]</a>    <span class="k">def</span> <span class="nf">joint</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Рассчитывает распределение совместной вероятности всех переменных сети.</span>
+
+<span class="sd">        Синтаксис:</span>
+<span class="sd">            &gt;&gt;&gt; import numpy as np</span>
+<span class="sd">            &gt;&gt;&gt; from pyinference.inference.variable import Variable</span>
+<span class="sd">            &gt;&gt;&gt; from pyinference.inference.factor import Factor</span>
+<span class="sd">            &gt;&gt;&gt; c = Variable(name=&#39;C&#39;, terms=[&#39;no&#39;, &#39;yes&#39;])</span>
+<span class="sd">            &gt;&gt;&gt; t = Variable(name=&#39;T&#39;, terms=[&#39;pos&#39;, &#39;neg&#39;])</span>
+<span class="sd">            &gt;&gt;&gt; c_node = Factor(name=&#39;C&#39;, cons=[c])</span>
+<span class="sd">            &gt;&gt;&gt; c_node.cpd = np.array([0.99, 0.01])</span>
+<span class="sd">            &gt;&gt;&gt; t_node = Factor(name=&#39;T|C&#39;, cons=[t], cond=[c])</span>
+<span class="sd">            &gt;&gt;&gt; t_node.cpd = np.array([[0.2, 0.8], [0.9, 0.1]])</span>
+<span class="sd">            &gt;&gt;&gt; bn = Net(name=&#39;Cancer&#39;, nodes=[c_node, t_node])</span>
+
+<span class="sd">            &gt;&gt;&gt; j = bn.joint()</span>
+<span class="sd">            &gt;&gt;&gt; j.shape</span>
+<span class="sd">            (2, 2)</span>
+<span class="sd">            &gt;&gt;&gt; len(j.vars)</span>
+<span class="sd">            2</span>
+<span class="sd">            &gt;&gt;&gt; &quot;%0.3f&quot; % j.cpd[0,0]</span>
+<span class="sd">            &#39;0.198&#39;</span>
+<span class="sd">            &gt;&gt;&gt; &quot;%0.3f&quot; % j.cpd[1,1]</span>
+<span class="sd">            &#39;0.001&#39;</span>
+
+<span class="sd">        Возвращает:</span>
+<span class="sd">            Фактор (:class:`Factor`), представляющий рапределение полной вероятности всех</span>
+<span class="sd">            переменных сети.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">nodes</span><span class="p">:</span>
+            <span class="n">res</span> <span class="o">*=</span> <span class="n">node</span><span class="o">.</span><span class="n">conditional</span>
+        <span class="k">return</span> <span class="n">res</span>
+</div>
+<div class="viewcode-block" id="Net.add_node"><a class="viewcode-back" href="../../../pyinference.inference.html#pyinference.inference.net.Net.add_node">[docs]</a>    <span class="k">def</span> <span class="nf">add_node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">factor</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Метод добавляет фактор к сети.</span>
+
+<span class="sd">        В процессе добавления фактора к сети производится проверка корректности. Он заключается в том, что мы не можем</span>
+<span class="sd">        добаить к сети фактор, если его родителя в сети нет. Например, у нас есть два фактора: F(C) и G(T|C).</span>
+<span class="sd">        Так как второй фактор (G) представляет условную вероятность, его родителем должен быть фактор, определяющий</span>
+<span class="sd">        распределение вероятности переменной C, то есть, фактор F. Таким образом, если мы *сначала* попытаемся добавить</span>
+<span class="sd">        к сети фактор G, то получим ошибку, так как его родителя в сети нет. Однако, если сперва добавить фактор</span>
+<span class="sd">        F, а уже *затем* фактор G, то проблем не возникнет.</span>
+<span class="sd">        Такая проверка гарантирует корректность графа, представляющего данную сеть.</span>
+
+<span class="sd">        Синтаксис:</span>
+<span class="sd">            &gt;&gt;&gt; import numpy as np</span>
+<span class="sd">            &gt;&gt;&gt; from pyinference.inference.variable import Variable</span>
+<span class="sd">            &gt;&gt;&gt; from pyinference.inference.factor import Factor</span>
+<span class="sd">            &gt;&gt;&gt; c = Variable(name=&#39;C&#39;, terms=[&#39;no&#39;, &#39;yes&#39;])</span>
+<span class="sd">            &gt;&gt;&gt; t = Variable(name=&#39;T&#39;, terms=[&#39;pos&#39;, &#39;neg&#39;])</span>
+<span class="sd">            &gt;&gt;&gt; c_node = Factor(name=&#39;C&#39;, cons=[c])</span>
+<span class="sd">            &gt;&gt;&gt; c_node.cpd = np.array([0.99, 0.01])</span>
+<span class="sd">            &gt;&gt;&gt; t_node = Factor(name=&#39;T|C&#39;, cons=[t], cond=[c])</span>
+<span class="sd">            &gt;&gt;&gt; t_node.cpd = np.array([[0.2, 0.8], [0.9, 0.1]])</span>
+<span class="sd">            &gt;&gt;&gt; bn = Net(name=&#39;Cancer&#39;)</span>
+<span class="sd">            &gt;&gt;&gt; bn.add_node(c_node)</span>
+<span class="sd">            &gt;&gt;&gt; bn.add_node(t_node)</span>
+
+<span class="sd">        Параметры:</span>
+<span class="sd">            factor (:class:`Factor`): добавляемый фактор</span>
+
+<span class="sd">        Исключения:</span>
+<span class="sd">            `AttributeError`: ошибка возникает, если при добавлении фактора провалилась проверка корректности.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">correct</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="n">node</span> <span class="o">=</span> <span class="n">_Node</span><span class="p">()</span>
+        <span class="n">node</span><span class="o">.</span><span class="n">conditional</span> <span class="o">=</span> <span class="n">factor</span>
+        <span class="n">node</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">factor</span><span class="o">.</span><span class="n">name</span>
+        <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">factor</span><span class="o">.</span><span class="n">cond</span><span class="p">:</span>  <span class="c"># проверка, есть ли распределение этого фактора в сети</span>
+            <span class="n">found</span> <span class="o">=</span> <span class="bp">False</span>
+            <span class="k">for</span> <span class="n">node_</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">nodes</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">cons</span> <span class="ow">in</span> <span class="n">node_</span><span class="o">.</span><span class="n">conditional</span><span class="o">.</span><span class="n">cons</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">var</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">cons</span><span class="o">.</span><span class="n">name</span><span class="p">:</span>
+                        <span class="n">found</span> <span class="o">=</span> <span class="bp">True</span>
+                        <span class="n">node</span><span class="o">.</span><span class="n">parents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node_</span><span class="p">)</span>
+            <span class="n">correct</span> <span class="o">=</span> <span class="n">correct</span> <span class="ow">and</span> <span class="n">found</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">correct</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">AttributeError</span>
+        <span class="n">uncond</span> <span class="o">=</span> <span class="n">factor</span>
+        <span class="k">for</span> <span class="n">parent</span> <span class="ow">in</span> <span class="n">node</span><span class="o">.</span><span class="n">parents</span><span class="p">:</span>
+            <span class="n">uncond</span> <span class="o">=</span> <span class="n">uncond</span> <span class="o">*</span> <span class="n">parent</span><span class="o">.</span><span class="n">uncond</span>
+            <span class="n">uncond</span> <span class="o">=</span> <span class="n">uncond</span> <span class="o">-</span> <span class="n">parent</span><span class="o">.</span><span class="n">uncond</span><span class="o">.</span><span class="n">cons</span>
+        <span class="n">node</span><span class="o">.</span><span class="n">uncond</span> <span class="o">=</span> <span class="n">uncond</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Net.query"><a class="viewcode-back" href="../../../pyinference.inference.html#pyinference.inference.net.Net.query">[docs]</a>    <span class="k">def</span> <span class="nf">query</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">evidence</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Выполняет запрос к сети вывода.</span>
+
+<span class="sd">        Синтаксис:</span>
+<span class="sd">            &gt;&gt;&gt; import numpy as np</span>
+<span class="sd">            &gt;&gt;&gt; from pyinference.inference.variable import Variable</span>
+<span class="sd">            &gt;&gt;&gt; from pyinference.inference.factor import Factor</span>
+<span class="sd">            &gt;&gt;&gt; c = Variable(name=&#39;C&#39;, terms=[&#39;no&#39;, &#39;yes&#39;])</span>
+<span class="sd">            &gt;&gt;&gt; t = Variable(name=&#39;T&#39;, terms=[&#39;pos&#39;, &#39;neg&#39;])</span>
+<span class="sd">            &gt;&gt;&gt; c_node = Factor(name=&#39;C&#39;, cons=[c])</span>
+<span class="sd">            &gt;&gt;&gt; c_node.cpd = np.array([0.99, 0.01])</span>
+<span class="sd">            &gt;&gt;&gt; t_node = Factor(name=&#39;T|C&#39;, cons=[t], cond=[c])</span>
+<span class="sd">            &gt;&gt;&gt; t_node.cpd = np.array([[0.2, 0.8], [0.9, 0.1]])</span>
+<span class="sd">            &gt;&gt;&gt; bn = Net(name=&#39;Cancer&#39;, nodes=[c_node, t_node])</span>
+
+<span class="sd">            &gt;&gt;&gt; q = bn.query(query=[c], evidence=[t])</span>
+<span class="sd">            &gt;&gt;&gt; len(q.vars)</span>
+<span class="sd">            2</span>
+<span class="sd">            &gt;&gt;&gt; q.cond[0].name</span>
+<span class="sd">            &#39;T&#39;</span>
+<span class="sd">            &gt;&gt;&gt; q.cons[0].name</span>
+<span class="sd">            &#39;C&#39;</span>
+<span class="sd">            &gt;&gt;&gt; &quot;%0.3f&quot; % q.cpd[0,0]</span>
+<span class="sd">            &#39;0.957&#39;</span>
+<span class="sd">            &gt;&gt;&gt; &quot;%0.3f&quot; % q.cpd[1,1]</span>
+<span class="sd">            &#39;0.001&#39;</span>
+
+<span class="sd">        Именованные параметры:</span>
+<span class="sd">            query (`list`): список переменных (:class:`Variable`) запроса;</span>
+
+<span class="sd">            evidence (`list`): список переменных (:class:`Variable`) свидетельств.</span>
+
+<span class="sd">        Возвращает:</span>
+<span class="sd">            Фактор (:class:`Factor`), представляющий рапределение условной вероятности,</span>
+<span class="sd">            где условными переменными являются наблюдения (evidence), а подусловными - переменные запроса (query):</span>
+<span class="sd">            F(Q|E).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">query</span> <span class="o">=</span> <span class="n">query</span> <span class="ow">or</span> <span class="p">[]</span>
+        <span class="n">evidence</span> <span class="o">=</span> <span class="n">evidence</span> <span class="ow">or</span> <span class="p">[]</span>
+        <span class="c"># TODO локальный вывод</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">joint</span><span class="p">()</span>
+        <span class="c"># TODO проверка корректности</span>
+        <span class="n">hidden</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">vars</span><span class="p">)</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">query</span><span class="p">)</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">evidence</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="n">hidden</span><span class="p">:</span>
+            <span class="n">res</span> <span class="o">-=</span> <span class="n">h</span>
+        <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">evidence</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">nodes</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">uncond</span><span class="o">.</span><span class="n">vars</span> <span class="o">==</span> <span class="p">[</span><span class="n">e</span><span class="p">]:</span>
+                    <span class="n">res</span> <span class="o">/=</span> <span class="n">node</span><span class="o">.</span><span class="n">uncond</span>
+        <span class="k">return</span> <span class="n">res</span></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">pyinference 0.4.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >Module code</a> &raquo;</li>
+          <li><a href="../inference.html" >pyinference.inference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, sejros.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

@@ -3,9 +3,9 @@
 import unittest
 import numpy as np
 
-from pyinference.inference.Factor import Factor
-from pyinference.inference.Net import Net
-from pyinference.inference.Variable import Variable
+from pyinference.inference.factor import Factor
+from pyinference.inference.net import Net
+from pyinference.inference.variable import Variable
 from pyinference.fuzzy.set import Partition
 
 
@@ -47,7 +47,8 @@ class TestFactor(unittest.TestCase):
         self.t = Variable(name='T', terms=['pos', 'neg'])
 
         self.C = Factor(name='C', cons=[self.c])
-        self.C.cpd = np.array([0.99, 0.01])     # TODO cpd assignment
+        self.C.cpd = np.array([0.99, 0.01])
+        # TODO cpd assignment
         self.T = Factor(name='T|C', cons=[self.t], cond=[self.c])
         self.T.cpd = np.array([[0.2, 0.8], [0.9, 0.1]])
 
@@ -99,7 +100,7 @@ class TestNet(unittest.TestCase):
         self.t = Variable(name='T', terms=['pos', 'neg'])
 
         self.C = Factor(name='C', cons=[self.c])
-        self.C.cpd = np.array([0.99, 0.01])     # TODO cpd assignment
+        self.C.cpd = np.array([0.99, 0.01])
         self.T = Factor(name='T|C', cons=[self.t], cond=[self.c])
         self.T.cpd = np.array([[0.2, 0.8], [0.9, 0.1]])
 
