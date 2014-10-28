@@ -14,13 +14,13 @@ def read(*filenames, **kwargs):
             buf.append(f.read())
     return sep.join(buf)
 
-long_description = read('README.txt', 'CHANGES.txt')
+long_description = read('README.txt')
 
 
 setup(
     name="PyInference",
     version=pyinference.__version__,
-    url="",
+    url="https://github.com/sejros/PyInference",
     license='GNU GPL',
     author="sejros",
     author_email="sairos@bk.ru",
@@ -40,12 +40,13 @@ setup(
     ],
 
     packages=[
-        "fuzzy",
-        "inference",
+        "pyinference",
+        "pyinference.fuzzy",
+        "pyinference.inference"
     ],
 
-    requires=[
-        "numpy>=1.6.1",
+    install_requires=[
+        'numpy>=1.6.1',
         'matplotlib>=1.4.0',
     ]
 )
