@@ -1,0 +1,244 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>pyinference.inference.variable &mdash; pyinference 0.4.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="pyinference 0.4.0 documentation" href="../../../index.html" />
+    <link rel="up" title="pyinference.inference" href="../inference.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">pyinference 0.4.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >Module code</a> &raquo;</li>
+          <li><a href="../inference.html" accesskey="U">pyinference.inference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for pyinference.inference.variable</h1><div class="highlight"><pre>
+<span class="c"># coding=utf-8</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">pyinference.fuzzy</span> <span class="kn">import</span> <span class="nb">set</span> <span class="k">as</span> <span class="n">fuzzy_set</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s">&#39;sejros&#39;</span>
+
+
+<div class="viewcode-block" id="Variable"><a class="viewcode-back" href="../../../pyinference.inference.html#pyinference.inference.variable.Variable">[docs]</a><span class="k">class</span> <span class="nc">Variable</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Класс реализует переменную</span>
+
+<span class="sd">    Переменная представляет собой некий параметр, могущий иметь определенный набор значений.</span>
+<span class="sd">    Набор значений переменной может задаваться двумя способами.</span>
+<span class="sd">    Во-первых, можно задать списком. В таком случае, этот список следует передать как аргумент terms конструктора.</span>
+<span class="sd">    Во-вторых, с переменной может быть ассоциирован нечеткий классификатор (см.</span>
+<span class="sd">    :class:`pyinference.fuzzy.set.FuzzySet`).</span>
+<span class="sd">    Тогда передать конструктору следует его.</span>
+
+<span class="sd">    Переменная в байесовском моделировании – некая сущность, обладающая именем и областью определения.</span>
+<span class="sd">    Обычно, рассматриваются переменные двух типов: дискретные и непрерывные. Дискретные переменные принимают значения</span>
+<span class="sd">    из некоторого конечного множества X, а непрерывные – определены на некотором подмножестве множества действительных</span>
+<span class="sd">    чисел. В общем случае, переменная определяется упорядоченной парой V=(N, X), где N – имя переменной, а X –</span>
+<span class="sd">    множество возможных значений.</span>
+
+<span class="sd">    Примером случайной переменной может быть результат подбрасывания монеты в таком случае областью ее определения</span>
+<span class="sd">    будет множество {“орел”, “решка”}. В общем случае, конкретные значения переменной не имеют синтаксического значения</span>
+<span class="sd">    (имеют место только семантически, то есть по смыслу) и их обычно заменяют соответствующим по числу элементов</span>
+<span class="sd">    подмножество множества натуральных числе. То есть в нашем примере, можно обозначить значение «решка» за 0, а</span>
+<span class="sd">    «орел» - за 1, и тогда область определения переменной будет {0, 1}.</span>
+
+<span class="sd">    Построим данную переменную с использованием класса Variable::</span>
+
+<span class="sd">        coin = Variable(name=&quot;coin&quot;, terms=[&quot;орел&quot;, &quot;решка&quot;])</span>
+
+<span class="sd">    Частным и довольно распространенным случаем дискретной переменной является переменная, способная принимать только</span>
+<span class="sd">    два значения. Такая переменная называется бинарной. В примере выше – результат подбрасывания монеты – бинарная</span>
+<span class="sd">    переменная.</span>
+
+<span class="sd">    Наиболее важным производным свойством дискретной переменной является мощность переменной – количество значений,</span>
+<span class="sd">    которые она может принимать. Мощность бинарной переменной равна двум.</span>
+
+<span class="sd">    Синтаксис:</span>
+<span class="sd">        &gt;&gt;&gt; import pyinference.inference.variable</span>
+<span class="sd">        &gt;&gt;&gt; a = Variable(name=&#39;a&#39;, terms=[0, 1])</span>
+<span class="sd">        &gt;&gt;&gt; a.value = &#39;low&#39;</span>
+
+<span class="sd">        &gt;&gt;&gt; from pyinference.fuzzy import set as fuzzy_set</span>
+<span class="sd">        &gt;&gt;&gt; fs = fuzzy_set.Partition(peaks=[0.0, 0.5, 1.0])</span>
+<span class="sd">        &gt;&gt;&gt; b = Variable(name=&#39;B&#39;, terms=fs)</span>
+
+<span class="sd">    Поля класса:</span>
+<span class="sd">        card (`int`): мощность переменной (количество значений)</span>
+
+<span class="sd">        classifier(`dict` or :class:`pyinference.fuzzy.set.FuzzySet`): связанный с переменной классификатор</span>
+
+<span class="sd">        name (`str`): имя переменной</span>
+
+<span class="sd">        terms (`list`): список значений переменной (терм-множество)</span>
+
+<span class="sd">        value (`object`): текущее значение переемнной</span>
+
+<span class="sd">    Именованные параметры:</span>
+<span class="sd">        name (`str`): имя переменной</span>
+
+<span class="sd">        terms (`list` or `dict` or :class:`pyinference.fuzzy.set.FuzzySet`): набор значений переменной</span>
+
+<span class="sd">    Исключения:</span>
+<span class="sd">        `TypeError`: ошибка возникает, если агрумент terms имеет неподдерживаемый тип.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">,</span> <span class="n">terms</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">terms</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">classifier</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">terms</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">terms</span> <span class="o">=</span> <span class="n">terms</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">classifier</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">terms</span><span class="p">,</span> <span class="n">fuzzy_set</span><span class="o">.</span><span class="n">FuzzySet</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">terms</span> <span class="o">=</span> <span class="n">terms</span><span class="o">.</span><span class="n">sets</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">classifier</span> <span class="o">=</span> <span class="n">terms</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">terms</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">terms</span> <span class="o">=</span> <span class="n">terms</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">classifier</span> <span class="o">=</span> <span class="n">terms</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">card</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">terms</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+
+<div class="viewcode-block" id="Variable.equals"><a class="viewcode-back" href="../../../pyinference.inference.html#pyinference.inference.variable.Variable.equals">[docs]</a>    <span class="k">def</span> <span class="nf">equals</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Проверка переменной на равенство значению.</span>
+
+<span class="sd">        Данный метод принимает некое значение и вычисляет меру сходства его со значением атрибута `value`.</span>
+
+<span class="sd">        Синтаксис:</span>
+<span class="sd">            &gt;&gt;&gt; import pyinference.inference.variable</span>
+<span class="sd">            &gt;&gt;&gt; a = Variable(name=&#39;a&#39;, terms=[0, 1])</span>
+<span class="sd">            &gt;&gt;&gt; a.value = &#39;low&#39;</span>
+<span class="sd">            &gt;&gt;&gt; &#39;%.2f&#39; % a.equals(&#39;low&#39;)</span>
+<span class="sd">            &#39;1.00&#39;</span>
+<span class="sd">            &gt;&gt;&gt; &#39;%.2f&#39; % a.equals(&#39;high&#39;)</span>
+<span class="sd">            &#39;0.00&#39;</span>
+
+<span class="sd">            &gt;&gt;&gt; from pyinference.fuzzy import set as fuzzy_set</span>
+<span class="sd">            &gt;&gt;&gt; import pyinference.inference.variable</span>
+<span class="sd">            &gt;&gt;&gt; fs = fuzzy_set.Partition(peaks=[0.0, 0.5, 1.0])</span>
+<span class="sd">            &gt;&gt;&gt; b = Variable(name=&#39;B&#39;, terms=fs)</span>
+<span class="sd">            &gt;&gt;&gt; b.value = 0.5</span>
+<span class="sd">            &gt;&gt;&gt; &#39;%.2f&#39; % b.equals(0.5)</span>
+<span class="sd">            &#39;1.00&#39;</span>
+<span class="sd">            &gt;&gt;&gt; b.value = &#39;1&#39;</span>
+<span class="sd">            &gt;&gt;&gt; &#39;%.2f&#39; % b.equals(0.25)</span>
+<span class="sd">            &#39;0.50&#39;</span>
+
+<span class="sd">        Параметры:</span>
+<span class="sd">            value (`object`): Значение переменной.</span>
+<span class="sd">            Может быть как элементом терм-множества занчений, явно перечисленного в атрибуте `terms` класса,</span>
+<span class="sd">            так и элементом области определения связанного с этой переменной классификатора.</span>
+
+<span class="sd">        Возвращает:</span>
+<span class="sd">            Действительное число x, где -1.0 &lt;= x &lt;= 1.0, характеризующую меру сходства переданного и текущего</span>
+<span class="sd">            значений переменной.</span>
+
+<span class="sd">        Исключения:</span>
+<span class="sd">            `AttributeError`: если текущее значение переменной не было задано до вызова данного метода.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">AttributeError</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">classifier</span><span class="p">:</span>
+            <span class="n">val1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">classifier</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">val1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">classifier</span><span class="p">:</span>
+            <span class="n">val2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">classifier</span><span class="p">[</span><span class="n">value</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">val2</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">val1</span> <span class="o">==</span> <span class="n">val2</span><span class="p">)</span>
+</div>
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Краткое текстовое представление перееменной.</span>
+
+<span class="sd">        Синтаксис:</span>
+<span class="sd">            &gt;&gt;&gt; import pyinference.inference.variable</span>
+<span class="sd">            &gt;&gt;&gt; a = Variable(name=&#39;A&#39;, terms=[0, 1])</span>
+<span class="sd">            &gt;&gt;&gt; print a</span>
+<span class="sd">            A</span>
+
+<span class="sd">        Возвращает:</span>
+<span class="sd">            Возвращает имя переменной</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">pyinference 0.4.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >Module code</a> &raquo;</li>
+          <li><a href="../inference.html" >pyinference.inference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, sejros.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

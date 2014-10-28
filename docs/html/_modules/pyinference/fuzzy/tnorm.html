@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>pyinference.fuzzy.tnorm &mdash; pyinference 0.4.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="pyinference 0.4.0 documentation" href="../../../index.html" />
+    <link rel="up" title="Module code" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">pyinference 0.4.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for pyinference.fuzzy.tnorm</h1><div class="highlight"><pre>
+<span class="c"># -*- coding: UTF-8 -*-</span>
+
+<span class="sd">&quot;&quot;&quot;Модуль реализует набор простых и параметрических треугольных норм и конорм.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">math</span>
+
+
+<div class="viewcode-block" id="Tnorm"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.tnorm.Tnorm">[docs]</a><span class="k">class</span> <span class="nc">Tnorm</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="Tnorm.norm"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.tnorm.Tnorm.norm">[docs]</a>    <span class="k">def</span> <span class="nf">norm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+        <span class="k">pass</span>
+</div>
+<div class="viewcode-block" id="Tnorm.conorm"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.tnorm.Tnorm.conorm">[docs]</a>    <span class="k">def</span> <span class="nf">conorm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+</div></div>
+<div class="viewcode-block" id="MinMax"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.tnorm.MinMax">[docs]</a><span class="k">class</span> <span class="nc">MinMax</span><span class="p">(</span><span class="n">Tnorm</span><span class="p">):</span>
+<div class="viewcode-block" id="MinMax.norm"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.tnorm.MinMax.norm">[docs]</a>    <span class="k">def</span> <span class="nf">norm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="MinMax.conorm"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.tnorm.MinMax.conorm">[docs]</a>    <span class="k">def</span> <span class="nf">conorm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+
+</div></div>
+<div class="viewcode-block" id="SumProd"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.tnorm.SumProd">[docs]</a><span class="k">class</span> <span class="nc">SumProd</span><span class="p">(</span><span class="n">Tnorm</span><span class="p">):</span>
+<div class="viewcode-block" id="SumProd.norm"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.tnorm.SumProd.norm">[docs]</a>    <span class="k">def</span> <span class="nf">norm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">i</span> <span class="o">*</span> <span class="n">j</span>
+</div>
+<div class="viewcode-block" id="SumProd.conorm"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.tnorm.SumProd.conorm">[docs]</a>    <span class="k">def</span> <span class="nf">conorm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">i</span> <span class="o">+</span> <span class="n">j</span> <span class="o">-</span> <span class="n">i</span> <span class="o">*</span> <span class="n">j</span>
+
+</div></div>
+<div class="viewcode-block" id="Margin"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.tnorm.Margin">[docs]</a><span class="k">class</span> <span class="nc">Margin</span><span class="p">(</span><span class="n">Tnorm</span><span class="p">):</span>
+<div class="viewcode-block" id="Margin.norm"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.tnorm.Margin.norm">[docs]</a>    <span class="k">def</span> <span class="nf">norm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Margin.conorm"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.tnorm.Margin.conorm">[docs]</a>    <span class="k">def</span> <span class="nf">conorm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="n">j</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+</div></div>
+<div class="viewcode-block" id="Drastic"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.tnorm.Drastic">[docs]</a><span class="k">class</span> <span class="nc">Drastic</span><span class="p">(</span><span class="n">Tnorm</span><span class="p">):</span>
+<div class="viewcode-block" id="Drastic.norm"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.tnorm.Drastic.norm">[docs]</a>    <span class="k">def</span> <span class="nf">norm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">j</span>
+        <span class="k">elif</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">i</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+</div>
+<div class="viewcode-block" id="Drastic.conorm"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.tnorm.Drastic.conorm">[docs]</a>    <span class="k">def</span> <span class="nf">conorm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">j</span>
+        <span class="k">elif</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">i</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">1</span>
+
+</div></div>
+<div class="viewcode-block" id="ParametricNorm"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.tnorm.ParametricNorm">[docs]</a><span class="k">class</span> <span class="nc">ParametricNorm</span><span class="p">(</span><span class="n">Tnorm</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">param</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">param</span> <span class="o">=</span> <span class="n">param</span>
+
+</div>
+<div class="viewcode-block" id="Tnorm1"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.tnorm.Tnorm1">[docs]</a><span class="k">class</span> <span class="nc">Tnorm1</span><span class="p">(</span><span class="n">ParametricNorm</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">param</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Tnorm1</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">param</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Tnorm1.norm"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.tnorm.Tnorm1.norm">[docs]</a>    <span class="k">def</span> <span class="nf">norm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">i</span> <span class="o">*</span> <span class="n">j</span> <span class="o">/</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">param</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">param</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="n">j</span> <span class="o">-</span> <span class="n">i</span> <span class="o">*</span> <span class="n">j</span><span class="p">))</span>
+</div>
+<div class="viewcode-block" id="Tnorm1.conorm"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.tnorm.Tnorm1.conorm">[docs]</a>    <span class="k">def</span> <span class="nf">conorm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="n">j</span> <span class="o">-</span> <span class="p">(</span><span class="mi">2</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">param</span><span class="p">)</span> <span class="o">*</span> <span class="n">i</span> <span class="o">*</span> <span class="n">j</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">param</span><span class="p">)</span> <span class="o">*</span> <span class="n">i</span> <span class="o">*</span> <span class="n">j</span><span class="p">)</span>
+
+</div></div>
+<div class="viewcode-block" id="Tnorm2"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.tnorm.Tnorm2">[docs]</a><span class="k">class</span> <span class="nc">Tnorm2</span><span class="p">(</span><span class="n">ParametricNorm</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">param</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Tnorm2</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">param</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Tnorm2.norm"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.tnorm.Tnorm2.norm">[docs]</a>    <span class="k">def</span> <span class="nf">norm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">i</span> <span class="o">*</span> <span class="n">j</span> <span class="o">/</span> <span class="nb">max</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">param</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Tnorm2.conorm"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.tnorm.Tnorm2.conorm">[docs]</a>    <span class="k">def</span> <span class="nf">conorm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="n">j</span> <span class="o">-</span> <span class="n">i</span> <span class="o">*</span> <span class="n">j</span> <span class="o">-</span> <span class="nb">min</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="mi">1</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">param</span><span class="p">))</span> <span class="o">/</span> <span class="nb">max</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">i</span><span class="p">,</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">j</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">param</span><span class="p">)</span>
+
+</div></div>
+<div class="viewcode-block" id="Tnorm3"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.tnorm.Tnorm3">[docs]</a><span class="k">class</span> <span class="nc">Tnorm3</span><span class="p">(</span><span class="n">ParametricNorm</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">param</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Tnorm3</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">param</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Tnorm3.norm"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.tnorm.Tnorm3.norm">[docs]</a>    <span class="k">def</span> <span class="nf">norm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="p">((</span><span class="mi">1</span> <span class="o">/</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">**</span> <span class="bp">self</span><span class="o">.</span><span class="n">param</span> <span class="o">+</span>
+                             <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">**</span> <span class="bp">self</span><span class="o">.</span><span class="n">param</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">param</span><span class="p">))</span>
+        <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">0.0</span>
+</div>
+<div class="viewcode-block" id="Tnorm3.conorm"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.tnorm.Tnorm3.conorm">[docs]</a>    <span class="k">def</span> <span class="nf">conorm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="p">((</span><span class="mi">1</span> <span class="o">/</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">**</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">param</span> <span class="o">+</span>
+                         <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">**</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">param</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">param</span><span class="p">))</span>
+
+</div></div>
+<div class="viewcode-block" id="Tnorm4"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.tnorm.Tnorm4">[docs]</a><span class="k">class</span> <span class="nc">Tnorm4</span><span class="p">(</span><span class="n">ParametricNorm</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">param</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Tnorm4</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">param</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Tnorm4.norm"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.tnorm.Tnorm4.norm">[docs]</a>    <span class="k">def</span> <span class="nf">norm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mi">1</span> <span class="o">-</span> <span class="p">((</span><span class="mi">1</span> <span class="o">-</span> <span class="n">i</span><span class="p">)</span> <span class="o">**</span> <span class="bp">self</span><span class="o">.</span><span class="n">param</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">j</span><span class="p">)</span> <span class="o">**</span> <span class="bp">self</span><span class="o">.</span><span class="n">param</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">i</span><span class="p">)</span> <span class="o">**</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">param</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">j</span><span class="p">)</span> <span class="o">**</span> <span class="bp">self</span><span class="o">.</span><span class="n">param</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">param</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Tnorm4.conorm"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.tnorm.Tnorm4.conorm">[docs]</a>    <span class="k">def</span> <span class="nf">conorm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">i</span> <span class="o">**</span> <span class="bp">self</span><span class="o">.</span><span class="n">param</span> <span class="o">+</span> <span class="n">j</span> <span class="o">**</span> <span class="bp">self</span><span class="o">.</span><span class="n">param</span> <span class="o">-</span> <span class="n">i</span> <span class="o">**</span> <span class="bp">self</span><span class="o">.</span><span class="n">param</span> <span class="o">*</span> <span class="n">j</span> <span class="o">**</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">param</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">param</span><span class="p">)</span>
+
+</div></div>
+<div class="viewcode-block" id="Tnorm5"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.tnorm.Tnorm5">[docs]</a><span class="k">class</span> <span class="nc">Tnorm5</span><span class="p">(</span><span class="n">ParametricNorm</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">param</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Tnorm5</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">param</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Tnorm5.norm"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.tnorm.Tnorm5.norm">[docs]</a>    <span class="k">def</span> <span class="nf">norm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">max</span><span class="p">((</span><span class="mi">1</span> <span class="o">-</span> <span class="p">((</span><span class="mi">1</span> <span class="o">-</span> <span class="n">i</span><span class="p">)</span> <span class="o">**</span> <span class="bp">self</span><span class="o">.</span><span class="n">param</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">j</span><span class="p">)</span> <span class="o">**</span> <span class="bp">self</span><span class="o">.</span><span class="n">param</span><span class="p">)</span> <span class="o">**</span>
+                    <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">param</span><span class="p">)),</span> <span class="mi">0</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Tnorm5.conorm"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.tnorm.Tnorm5.conorm">[docs]</a>    <span class="k">def</span> <span class="nf">conorm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">min</span><span class="p">((</span><span class="n">i</span> <span class="o">**</span> <span class="bp">self</span><span class="o">.</span><span class="n">param</span> <span class="o">+</span> <span class="n">j</span> <span class="o">**</span> <span class="bp">self</span><span class="o">.</span><span class="n">param</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+
+</div></div>
+<div class="viewcode-block" id="Tnorm6"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.tnorm.Tnorm6">[docs]</a><span class="k">class</span> <span class="nc">Tnorm6</span><span class="p">(</span><span class="n">ParametricNorm</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">param</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Tnorm6</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">param</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Tnorm6.norm"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.tnorm.Tnorm6.norm">[docs]</a>    <span class="k">def</span> <span class="nf">norm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">((</span><span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">param</span> <span class="o">**</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">param</span> <span class="o">**</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span>
+                             <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">param</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)),</span> <span class="bp">self</span><span class="o">.</span><span class="n">param</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">0.0</span>
+</div>
+<div class="viewcode-block" id="Tnorm6.conorm"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.tnorm.Tnorm6.conorm">[docs]</a>    <span class="k">def</span> <span class="nf">conorm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">((</span><span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">param</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">param</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">j</span><span class="p">))</span> <span class="o">/</span>
+                             <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">param</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)),</span> <span class="bp">self</span><span class="o">.</span><span class="n">param</span><span class="p">)</span>
+
+</div></div>
+<div class="viewcode-block" id="Tnorm7"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.tnorm.Tnorm7">[docs]</a><span class="k">class</span> <span class="nc">Tnorm7</span><span class="p">(</span><span class="n">ParametricNorm</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">param</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Tnorm7</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">param</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Tnorm7.norm"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.tnorm.Tnorm7.norm">[docs]</a>    <span class="k">def</span> <span class="nf">norm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">max</span><span class="p">((</span><span class="n">i</span> <span class="o">+</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">param</span> <span class="o">*</span> <span class="n">i</span> <span class="o">*</span> <span class="n">j</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">param</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Tnorm7.conorm"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.tnorm.Tnorm7.conorm">[docs]</a>    <span class="k">def</span> <span class="nf">conorm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">min</span><span class="p">((</span><span class="n">i</span> <span class="o">+</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">param</span> <span class="o">*</span> <span class="n">i</span> <span class="o">*</span> <span class="n">j</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+
+</div></div>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">doctest</span>
+
+    <span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">(</span><span class="n">verbose</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+    <span class="c"># ~ doctest.testmod(verbose=True)</span>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">pyinference 0.4.0 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, sejros.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>
