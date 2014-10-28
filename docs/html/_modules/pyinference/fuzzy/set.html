@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>pyinference.fuzzy.set &mdash; pyinference 0.1 documentation</title>
+    <title>pyinference.fuzzy.set &mdash; pyinference 0.4.0 documentation</title>
     
     <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '0.1',
+        VERSION:     '0.4.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <link rel="top" title="pyinference 0.1 documentation" href="../../../index.html" />
+    <link rel="top" title="pyinference 0.4.0 documentation" href="../../../index.html" />
     <link rel="up" title="Module code" href="../../index.html" /> 
   </head>
   <body>
@@ -36,7 +36,7 @@
         <li class="right" >
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="../../../index.html">pyinference 0.1 documentation</a> &raquo;</li>
+        <li><a href="../../../index.html">pyinference 0.4.0 documentation</a> &raquo;</li>
           <li><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -79,7 +79,7 @@ import math
 import pylab as p
 
 
-<div class="viewcode-block" id="FuzzySet"><a class="viewcode-back" href="../../../pyinference.fuzzy.set.html#pyinference.fuzzy.set.FuzzySet">[docs]</a>class FuzzySet(object):
+<div class="viewcode-block" id="FuzzySet"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.set.FuzzySet">[docs]</a>class FuzzySet(object):
     &quot;&quot;&quot;Нечеткое множество.
 
     Нечеткое множество, или классификатор, состоящее из набора нечетких
@@ -171,28 +171,28 @@ import pylab as p
     def __contains__(self, value):
         return value in self.sets
 
-<div class="viewcode-block" id="FuzzySet.keys"><a class="viewcode-back" href="../../../pyinference.fuzzy.set.html#pyinference.fuzzy.set.FuzzySet.keys">[docs]</a>    def keys(self):
+<div class="viewcode-block" id="FuzzySet.keys"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.set.FuzzySet.keys">[docs]</a>    def keys(self):
         raise NotImplementedError
 </div>
-<div class="viewcode-block" id="FuzzySet.values"><a class="viewcode-back" href="../../../pyinference.fuzzy.set.html#pyinference.fuzzy.set.FuzzySet.values">[docs]</a>    def values(self):
+<div class="viewcode-block" id="FuzzySet.values"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.set.FuzzySet.values">[docs]</a>    def values(self):
         raise NotImplementedError
 </div>
-<div class="viewcode-block" id="FuzzySet.items"><a class="viewcode-back" href="../../../pyinference.fuzzy.set.html#pyinference.fuzzy.set.FuzzySet.items">[docs]</a>    def items(self):
+<div class="viewcode-block" id="FuzzySet.items"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.set.FuzzySet.items">[docs]</a>    def items(self):
         raise NotImplementedError
 </div>
-<div class="viewcode-block" id="FuzzySet.has_key"><a class="viewcode-back" href="../../../pyinference.fuzzy.set.html#pyinference.fuzzy.set.FuzzySet.has_key">[docs]</a>    def has_key(self):
+<div class="viewcode-block" id="FuzzySet.has_key"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.set.FuzzySet.has_key">[docs]</a>    def has_key(self):
         raise NotImplementedError
 </div>
-<div class="viewcode-block" id="FuzzySet.iterkeys"><a class="viewcode-back" href="../../../pyinference.fuzzy.set.html#pyinference.fuzzy.set.FuzzySet.iterkeys">[docs]</a>    def iterkeys(self):
+<div class="viewcode-block" id="FuzzySet.iterkeys"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.set.FuzzySet.iterkeys">[docs]</a>    def iterkeys(self):
         raise NotImplementedError
 </div>
-<div class="viewcode-block" id="FuzzySet.itervalues"><a class="viewcode-back" href="../../../pyinference.fuzzy.set.html#pyinference.fuzzy.set.FuzzySet.itervalues">[docs]</a>    def itervalues(self):
+<div class="viewcode-block" id="FuzzySet.itervalues"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.set.FuzzySet.itervalues">[docs]</a>    def itervalues(self):
         raise NotImplementedError
 </div>
-<div class="viewcode-block" id="FuzzySet.iteritems"><a class="viewcode-back" href="../../../pyinference.fuzzy.set.html#pyinference.fuzzy.set.FuzzySet.iteritems">[docs]</a>    def iteritems(self):
+<div class="viewcode-block" id="FuzzySet.iteritems"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.set.FuzzySet.iteritems">[docs]</a>    def iteritems(self):
         raise NotImplementedError
 </div>
-<div class="viewcode-block" id="FuzzySet.add_term"><a class="viewcode-back" href="../../../pyinference.fuzzy.set.html#pyinference.fuzzy.set.FuzzySet.add_term">[docs]</a>    def add_term(self, sub, name=&#39;&#39;):
+<div class="viewcode-block" id="FuzzySet.add_term"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.set.FuzzySet.add_term">[docs]</a>    def add_term(self, sub, name=&#39;&#39;):
         &quot;&quot;&quot; Добавляет терм к данному классификатору. Порядок термов не важен.
 
         Syntax:
@@ -217,7 +217,7 @@ import pylab as p
         &quot;&quot;&quot;
         self.sets[name] = sub
 </div>
-<div class="viewcode-block" id="FuzzySet.find"><a class="viewcode-back" href="../../../pyinference.fuzzy.set.html#pyinference.fuzzy.set.FuzzySet.find">[docs]</a>    def find(self, val, term):
+<div class="viewcode-block" id="FuzzySet.find"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.set.FuzzySet.find">[docs]</a>    def find(self, val, term):
         &quot;&quot;&quot;Возвращает значение принадлежности точки x терму term.
 
         Синтаксис:
@@ -252,7 +252,7 @@ import pylab as p
         except KeyError:
             return None
 </div>
-<div class="viewcode-block" id="FuzzySet.classify"><a class="viewcode-back" href="../../../pyinference.fuzzy.set.html#pyinference.fuzzy.set.FuzzySet.classify">[docs]</a>    def classify(self, val):
+<div class="viewcode-block" id="FuzzySet.classify"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.set.FuzzySet.classify">[docs]</a>    def classify(self, val):
         &quot;&quot;&quot; Возвращает имя терма, наиболее соответствующего переданному элементу.
 
         Будучи вызванным у квалификатора, соответствует квалификации точного
@@ -294,7 +294,7 @@ import pylab as p
                 name = i
         return name
 </div>
-<div class="viewcode-block" id="FuzzySet.plot"><a class="viewcode-back" href="../../../pyinference.fuzzy.set.html#pyinference.fuzzy.set.FuzzySet.plot">[docs]</a>    def plot(self, verbose=False, subplot=p):
+<div class="viewcode-block" id="FuzzySet.plot"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.set.FuzzySet.plot">[docs]</a>    def plot(self, verbose=False, subplot=p):
         &quot;&quot;&quot; Отображает нечеткое множество графически. Все термы представляются на одном графике.
 
         Синтаксис:
@@ -317,7 +317,7 @@ import pylab as p
         subplot.grid()
 
 </div></div>
-<div class="viewcode-block" id="TriangleClassifier"><a class="viewcode-back" href="../../../pyinference.fuzzy.set.html#pyinference.fuzzy.set.TriangleClassifier">[docs]</a>class TriangleClassifier(FuzzySet):
+<div class="viewcode-block" id="TriangleClassifier"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.set.TriangleClassifier">[docs]</a>class TriangleClassifier(FuzzySet):
     &quot;&quot;&quot;Равномерный классификатор с термами в виде равноскатных треугольных чисел.
 
     Синтаксис:
@@ -449,7 +449,7 @@ import pylab as p
             mode += step
 
 </div>
-<div class="viewcode-block" id="GaussianClassifier"><a class="viewcode-back" href="../../../pyinference.fuzzy.set.html#pyinference.fuzzy.set.GaussianClassifier">[docs]</a>class GaussianClassifier(FuzzySet):
+<div class="viewcode-block" id="GaussianClassifier"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.set.GaussianClassifier">[docs]</a>class GaussianClassifier(FuzzySet):
     &quot;&quot;&quot;Равномерный классификатор с термами в виде гауссиан.
 
     Синтаксис:
@@ -506,7 +506,7 @@ import pylab as p
             mode += step
 
 </div>
-<div class="viewcode-block" id="Partition"><a class="viewcode-back" href="../../../pyinference.fuzzy.set.html#pyinference.fuzzy.set.Partition">[docs]</a>class Partition(FuzzySet):
+<div class="viewcode-block" id="Partition"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.set.Partition">[docs]</a>class Partition(FuzzySet):
     &quot;&quot;&quot; Данный класс создает линейный неравномерный классификатор по точкам, указанным в параметрах.
 
     Характерной особенностью данного классификатора
@@ -621,13 +621,13 @@ import pylab as p
         <li class="right" >
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="../../../index.html">pyinference 0.1 documentation</a> &raquo;</li>
+        <li><a href="../../../index.html">pyinference 0.4.0 documentation</a> &raquo;</li>
           <li><a href="../../index.html" >Module code</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2014, sejros.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
     </div>
   </body>
 </html>

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>pyinference.fuzzy package &mdash; pyinference 0.1 documentation</title>
+    <title>pyinference.fuzzy package &mdash; pyinference 0.4.0 documentation</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.1',
+        VERSION:     '0.4.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,9 +23,9 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="pyinference 0.1 documentation" href="index.html" />
+    <link rel="top" title="pyinference 0.4.0 documentation" href="index.html" />
     <link rel="up" title="pyinference package" href="pyinference.html" />
-    <link rel="next" title="pyinference.fuzzy.domain module" href="pyinference.fuzzy.domain.html" />
+    <link rel="next" title="pyinference.inference package" href="pyinference.inference.html" />
     <link rel="prev" title="pyinference package" href="pyinference.html" /> 
   </head>
   <body>
@@ -39,12 +39,12 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="pyinference.fuzzy.domain.html" title="pyinference.fuzzy.domain module"
+          <a href="pyinference.inference.html" title="pyinference.inference package"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="pyinference.html" title="pyinference package"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">pyinference 0.1 documentation</a> &raquo;</li>
+        <li><a href="index.html">pyinference 0.4.0 documentation</a> &raquo;</li>
           <li><a href="pyinference.html" accesskey="U">pyinference package</a> &raquo;</li> 
       </ul>
     </div>  
@@ -58,14 +58,1098 @@
 <h1>pyinference.fuzzy package<a class="headerlink" href="#pyinference-fuzzy-package" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="pyinference.fuzzy.domain.html">pyinference.fuzzy.domain module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pyinference.fuzzy.set.html">pyinference.fuzzy.set module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pyinference.fuzzy.subset.html">pyinference.fuzzy.subset module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pyinference.fuzzy.tnorm.html">pyinference.fuzzy.tnorm module</a></li>
-</ul>
 </div>
+<div class="section" id="module-pyinference.fuzzy.domain">
+<span id="pyinference-fuzzy-domain-module"></span><h2>pyinference.fuzzy.domain module<a class="headerlink" href="#module-pyinference.fuzzy.domain" title="Permalink to this headline">¶</a></h2>
+<p>Модуль, описывающий различные типы носителей нечетких множеств, а также
+реализующий функциональность нечетких правил логического вывода.</p>
+<dl class="class">
+<dt id="pyinference.fuzzy.domain.Domain">
+<em class="property">class </em><tt class="descclassname">pyinference.fuzzy.domain.</tt><tt class="descname">Domain</tt><a class="reference internal" href="_modules/pyinference/fuzzy/domain.html#Domain"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.domain.Domain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>Абстрактный класс, реализующий интерфейс носителя нечеткого множества.</p>
+<p>Смысловую нагрузку несут подклассы этого класса,
+представляющие различные виды носителей. Преимуществом такого подхода
+является его универсальность: в качестве носителя при определении
+нечеткого множества можно задавать действительный интервал,
+целочисленный интервал, в принципе, любую итерируемую структуру.</p>
+<dl class="method">
+<dt id="pyinference.fuzzy.domain.Domain.card">
+<tt class="descname">card</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/domain.html#Domain.card"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.domain.Domain.card" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cardinality of the domain</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyinference.fuzzy.domain.Domain.char">
+<tt class="descname">char</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/domain.html#Domain.char"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.domain.Domain.char" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pyinference.fuzzy.domain.IntegerRange">
+<em class="property">class </em><tt class="descclassname">pyinference.fuzzy.domain.</tt><tt class="descname">IntegerRange</tt><big>(</big><em>begin=1</em>, <em>end=100</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/domain.html#IntegerRange"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.domain.IntegerRange" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyinference.fuzzy.domain.RationalRange" title="pyinference.fuzzy.domain.RationalRange"><tt class="xref py py-class docutils literal"><span class="pre">pyinference.fuzzy.domain.RationalRange</span></tt></a></p>
+<p>Класс, моделирующий носитель нечеткого множества в виде целочисленного интервала.</p>
+<blockquote>
+<div>По сути, является частным случаем предыдущего класса
+(см. <a class="reference internal" href="#pyinference.fuzzy.domain.RationalRange" title="pyinference.fuzzy.domain.RationalRange"><tt class="xref py py-class docutils literal"><span class="pre">RationalRange</span></tt></a>), когда точность равна разнице границ интервала.</div></blockquote>
+<p>Синтаксис:</p>
+<blockquote>
+<div><div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">B</span><span class="o">=</span><span class="n">IntegerRange</span><span class="p">(</span><span class="n">begin</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="mf">3.0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">B</span><span class="p">:</span> <span class="k">print</span> <span class="n">i</span>
+<span class="go">0</span>
+<span class="go">1</span>
+<span class="go">2</span>
+<span class="go">3</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Attributes:</dt>
+<dd>begin
+end</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="class">
+<dt id="pyinference.fuzzy.domain.RationalRange">
+<em class="property">class </em><tt class="descclassname">pyinference.fuzzy.domain.</tt><tt class="descname">RationalRange</tt><big>(</big><em>begin=0.0</em>, <em>end=1.0</em>, <em>acc=1000</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/domain.html#RationalRange"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.domain.RationalRange" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyinference.fuzzy.domain.Domain" title="pyinference.fuzzy.domain.Domain"><tt class="xref py py-class docutils literal"><span class="pre">pyinference.fuzzy.domain.Domain</span></tt></a></p>
+<p>Данный класс реализует носитель нечеткого подмножества в виде отрезка действительной оси.</p>
+<p>В качестве параметров конструктор класса
+принимает значения начала и конца интервала, а также параметр &#8220;точность&#8221; -
+целое число, определяющее количество проходов при расчете нечетких
+функционалов численным методом. Это число является компромиссом между
+точностью и скоростью подсчета, поэтому там, где это возможно,
+численный расчет нечетких функционалов заменен аналитическими выражениями.</p>
+<p>Синтаксис:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">B</span> <span class="o">=</span> <span class="n">RationalRange</span><span class="p">(</span><span class="n">end</span><span class="o">=</span><span class="mf">3.0</span><span class="p">,</span> <span class="n">acc</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">B</span><span class="p">:</span> <span class="k">print</span> <span class="n">i</span>
+<span class="go">0.0</span>
+<span class="go">1.0</span>
+<span class="go">2.0</span>
+<span class="go">3.0</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">B</span> <span class="o">=</span> <span class="n">RationalRange</span><span class="p">(</span><span class="n">end</span><span class="o">=</span><span class="mf">3.0</span><span class="p">,</span> <span class="n">acc</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">B</span><span class="p">:</span> <span class="k">print</span> <span class="n">i</span>
+<span class="go">0.0</span>
+<span class="go">0.375</span>
+<span class="go">0.75</span>
+<span class="go">1.125</span>
+<span class="go">1.5</span>
+<span class="go">1.875</span>
+<span class="go">2.25</span>
+<span class="go">2.625</span>
+<span class="go">3.0</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Attributes:</dt>
+<dd>begin:
+end:
+acc:</dd>
+</dl>
+<dl class="method">
+<dt id="pyinference.fuzzy.domain.RationalRange.card">
+<tt class="descname">card</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/domain.html#RationalRange.card"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.domain.RationalRange.card" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-pyinference.fuzzy.set">
+<span id="pyinference-fuzzy-set-module"></span><h2>pyinference.fuzzy.set module<a class="headerlink" href="#module-pyinference.fuzzy.set" title="Permalink to this headline">¶</a></h2>
+<p>Модуль для работы с нечеткими множествами.</p>
+<p>Модуль реализует функциональность аппарата нечеткой логики в части работы с
+нечеткими множествами. Он включает:</p>
+<blockquote>
+<div><ul class="simple">
+<li>абстрактный класс нечеткого множества,</li>
+<li>шаблоны для создания классификаторов различных видов.</li>
+</ul>
+</div></blockquote>
+<p>В основном, модуль предназначен длясоздания и спользования нечетких
+классификаторов. С помощью него можно создать классификатор как в ручном режиме
+и заполнить его термами самостоятельно, так и воспользоваться одним из
+конструкторов, описанных ниже.</p>
+<p>Нечеткий классификатор - это одно из применений нечеткого множества. Он состоит
+из нескольких нечетких подмножеств (см. <tt class="xref py py-class docutils literal"><span class="pre">pyinference.fuzzy.subset.FuzzySubset</span></tt>), определенных на одном
+носителе (интервале определения). Термы множества имеют метки,которые
+используются в качестве значений лингвистических переменных вместо обычных
+чисел.</p>
+<dl class="class">
+<dt id="pyinference.fuzzy.set.FuzzySet">
+<em class="property">class </em><tt class="descclassname">pyinference.fuzzy.set.</tt><tt class="descname">FuzzySet</tt><big>(</big><em>begin=0.0</em>, <em>end=1.0</em>, <em>domain=None</em>, <em>name=''</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/set.html#FuzzySet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.set.FuzzySet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>Нечеткое множество.</p>
+<p>Нечеткое множество, или классификатор, состоящее из набора нечетких
+подмножеств, определенных на одном и том же носителе.</p>
+<dl class="docutils">
+<dt>Синтаксис:</dt>
+<dd><div class="first last highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">FuzzySet</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&#39;Classifier&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">domain</span><span class="o">.</span><span class="n">begin</span>
+<span class="go">0.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">domain</span><span class="o">.</span><span class="n">end</span>
+<span class="go">100.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">name</span>
+<span class="go">&#39;Classifier&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">sets</span>
+<span class="go">{}</span>
+</pre></div>
+</div>
+</dd>
+<dt>Поля класса:</dt>
+<dd><dl class="first docutils">
+<dt>sets (<cite>dict</cite>): Ассоциативный массив, содержащий, соответственно, имя и объект типа</dt>
+<dd><a class="reference internal" href="#pyinference.fuzzy.subset.Subset" title="pyinference.fuzzy.subset.Subset"><tt class="xref py py-class docutils literal"><span class="pre">pyinference.fuzzy.subset.Subset</span></tt></a>, для каждого терма нечеткого множества.</dd>
+</dl>
+<p>domain (<a class="reference internal" href="#pyinference.fuzzy.domain.Domain" title="pyinference.fuzzy.domain.Domain"><tt class="xref py py-class docutils literal"><span class="pre">pyinference.fuzzy.domain.Domain</span></tt></a>): носитель нечеткого множества</p>
+<p class="last">name (<cite>str</cite>): имя классификатора</p>
+</dd>
+<dt>Именованные параметры:</dt>
+<dd><p class="first">begin (<cite>float</cite>): начало интервала определения классификатора</p>
+<p>end (<cite>float</cite>): конец интервала определения классификатора</p>
+<p>name (<cite>str</cite>): имя классификатора</p>
+<p class="last">domain (<a class="reference internal" href="#pyinference.fuzzy.domain.Domain" title="pyinference.fuzzy.domain.Domain"><tt class="xref py py-class docutils literal"><span class="pre">pyinference.fuzzy.domain.Domain</span></tt></a>): носитель нечеткого множества</p>
+</dd>
+</dl>
+<dl class="method">
+<dt id="pyinference.fuzzy.set.FuzzySet.add_term">
+<tt class="descname">add_term</tt><big>(</big><em>sub</em>, <em>name=''</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/set.html#FuzzySet.add_term"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.set.FuzzySet.add_term" title="Permalink to this definition">¶</a></dt>
+<dd><p>Добавляет терм к данному классификатору. Порядок термов не важен.</p>
+<dl class="docutils">
+<dt>Syntax:</dt>
+<dd><div class="first last highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">FuzzySet</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">S</span> <span class="o">=</span> <span class="n">Gaussian</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">add_term</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&#39;term1&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">sets</span><span class="p">[</span><span class="s">&#39;term1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span>
+<span class="go">20.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">add_term</span><span class="p">(</span><span class="n">Triangle</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">75</span><span class="p">),</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&#39;term2&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">sets</span><span class="p">[</span><span class="s">&#39;term2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()</span>
+<span class="go">50.0</span>
+</pre></div>
+</div>
+</dd>
+<dt>Параметры:</dt>
+<dd><dl class="first last docutils">
+<dt>sub: нечеткое подмножество типа Subset, или любого производного,</dt>
+<dd>играющее роль терма нечеткого множества (классификатора)</dd>
+</dl>
+</dd>
+<dt>Именованные параметры:</dt>
+<dd><dl class="first last docutils">
+<dt>name: cтрока, идентифицирующая терм в составе данного множества.</dt>
+<dd>Используется для построении легенды в методе plot(), а также как
+ключ ассоциативного массива Sets</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyinference.fuzzy.set.FuzzySet.classify">
+<tt class="descname">classify</tt><big>(</big><em>val</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/set.html#FuzzySet.classify"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.set.FuzzySet.classify" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает имя терма, наиболее соответствующего переданному элементу.</p>
+<p>Будучи вызванным у квалификатора, соответствует квалификации точного
+значения или значения, выраженного нечетким подмножеством или числом.</p>
+<dl class="docutils">
+<dt>Синтаксис:</dt>
+<dd><div class="first last highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyinference.fuzzy.subset</span> <span class="kn">import</span> <span class="n">Gaussian</span><span class="p">,</span> <span class="n">Triangle</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">FuzzySet</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&#39;Classifier&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">add_term</span><span class="p">(</span><span class="n">Gaussian</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s">&#39;term1&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">add_term</span><span class="p">(</span><span class="n">Triangle</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">75</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s">&#39;term2&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">classify</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+<span class="go">&#39;term1&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">classify</span><span class="p">(</span><span class="mi">55</span><span class="p">)</span>
+<span class="go">&#39;term2&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">classify</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span>
+<span class="go">&#39;term2&#39;</span>
+</pre></div>
+</div>
+</dd>
+<dt>Параметры:</dt>
+<dd>val (<cite>float</cite> or <cite>object</cite>): элемент области определения нечеткого множества.</dd>
+<dt>Возвращает:</dt>
+<dd>Имя классификатора, наиболее соответствующего данной точке.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyinference.fuzzy.set.FuzzySet.find">
+<tt class="descname">find</tt><big>(</big><em>val</em>, <em>term</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/set.html#FuzzySet.find"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.set.FuzzySet.find" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает значение принадлежности точки x терму term.</p>
+<dl class="docutils">
+<dt>Синтаксис:</dt>
+<dd><div class="first last highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">C</span>  <span class="o">=</span>  <span class="n">Partition</span><span class="p">(</span><span class="n">peaks</span><span class="o">=</span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s">&#39;0&#39;</span><span class="p">)</span>
+<span class="go">1.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;</span><span class="si">%0.3f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">C</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="mf">0.12</span><span class="p">,</span> <span class="s">&#39;0&#39;</span><span class="p">)</span>
+<span class="go">&#39;0.600&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="mf">0.12</span><span class="p">,</span> <span class="s">&#39;1&#39;</span><span class="p">)</span>
+<span class="go">0.4</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="mf">0.12</span><span class="p">,</span> <span class="s">&#39;2&#39;</span><span class="p">)</span>
+<span class="go">0.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="s">&#39;0&#39;</span><span class="p">)</span>
+<span class="go">0.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">round</span><span class="p">(</span><span class="n">C</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="mf">0.65</span><span class="p">,</span> <span class="s">&#39;1&#39;</span><span class="p">),</span> <span class="mi">3</span><span class="p">)</span>
+<span class="go">0.5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">round</span><span class="p">(</span><span class="n">C</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="mf">0.65</span><span class="p">,</span> <span class="s">&#39;2&#39;</span><span class="p">),</span> <span class="mi">3</span><span class="p">)</span>
+<span class="go">0.5</span>
+</pre></div>
+</div>
+</dd>
+<dt>Параметры:</dt>
+<dd><p class="first">val (<cite>float</cite> or <cite>object</cite>): элемент области определения нечеткого множества</p>
+<p class="last">term (<cite>str</cite>): имя терма;</p>
+</dd>
+<dt>Возвращает:</dt>
+<dd>Число, соответствующее принадлежности данной точке области определения (val) данному терму
+классифиактора (term).</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyinference.fuzzy.set.FuzzySet.has_key">
+<tt class="descname">has_key</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/set.html#FuzzySet.has_key"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.set.FuzzySet.has_key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyinference.fuzzy.set.FuzzySet.items">
+<tt class="descname">items</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/set.html#FuzzySet.items"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.set.FuzzySet.items" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyinference.fuzzy.set.FuzzySet.iteritems">
+<tt class="descname">iteritems</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/set.html#FuzzySet.iteritems"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.set.FuzzySet.iteritems" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyinference.fuzzy.set.FuzzySet.iterkeys">
+<tt class="descname">iterkeys</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/set.html#FuzzySet.iterkeys"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.set.FuzzySet.iterkeys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyinference.fuzzy.set.FuzzySet.itervalues">
+<tt class="descname">itervalues</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/set.html#FuzzySet.itervalues"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.set.FuzzySet.itervalues" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyinference.fuzzy.set.FuzzySet.keys">
+<tt class="descname">keys</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/set.html#FuzzySet.keys"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.set.FuzzySet.keys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyinference.fuzzy.set.FuzzySet.plot">
+<tt class="descname">plot</tt><big>(</big><em>verbose=False</em>, <em>subplot=&lt;module 'pylab' from '/usr/local/lib/python2.7/dist-packages/matplotlib-1.4.1-py2.7-linux-i686.egg/pylab.pyc'&gt;</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/set.html#FuzzySet.plot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.set.FuzzySet.plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Отображает нечеткое множество графически. Все термы представляются на одном графике.</p>
+<dl class="docutils">
+<dt>Синтаксис:</dt>
+<dd><div class="first last highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">C</span>  <span class="o">=</span>  <span class="n">Partition</span><span class="p">(</span><span class="n">peaks</span><span class="o">=</span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd>
+<dt>Именованные параметры:</dt>
+<dd><p class="first">verbose (<cite>bool</cite>): задает подробное указание критических точек подмножеств на графике;</p>
+<dl class="last docutils">
+<dt>subplot (<tt class="xref py py-class docutils literal"><span class="pre">pylab.plot</span></tt>): если требуется отобразить данное множество на подграфике,</dt>
+<dd>можно воспользоваться данным параметром.</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyinference.fuzzy.set.FuzzySet.values">
+<tt class="descname">values</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/set.html#FuzzySet.values"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.set.FuzzySet.values" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pyinference.fuzzy.set.GaussianClassifier">
+<em class="property">class </em><tt class="descclassname">pyinference.fuzzy.set.</tt><tt class="descname">GaussianClassifier</tt><big>(</big><em>begin=0.0</em>, <em>end=1.0</em>, <em>domain=None</em>, <em>name=''</em>, <em>names=None</em>, <em>edge=0</em>, <em>cross=1.0</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/set.html#GaussianClassifier"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.set.GaussianClassifier" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyinference.fuzzy.set.FuzzySet" title="pyinference.fuzzy.set.FuzzySet"><tt class="xref py py-class docutils literal"><span class="pre">pyinference.fuzzy.set.FuzzySet</span></tt></a></p>
+<p>Равномерный классификатор с термами в виде гауссиан.</p>
+<dl class="docutils">
+<dt>Синтаксис:</dt>
+<dd><div class="first highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">GaussianClassifier</span><span class="p">(</span><span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;low&#39;</span><span class="p">,</span> <span class="s">&#39;middle&#39;</span><span class="p">,</span> <span class="s">&#39;high&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="last highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span>  <span class="o">=</span>  <span class="n">GaussianClassifier</span><span class="p">(</span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;low&#39;</span><span class="p">,</span> <span class="s">&#39;middle&#39;</span><span class="p">,</span> <span class="s">&#39;high&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">A</span><span class="o">.</span><span class="n">domain</span><span class="o">.</span><span class="n">begin</span>
+<span class="go">0.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">A</span><span class="o">.</span><span class="n">domain</span><span class="o">.</span><span class="n">end</span>
+<span class="go">1.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">A</span><span class="p">[</span><span class="s">&#39;low&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()</span>
+<span class="go">0.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">A</span><span class="p">[</span><span class="s">&#39;middle&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()</span>
+<span class="go">0.5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">A</span><span class="p">[</span><span class="s">&#39;high&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()</span>
+<span class="go">1.0</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<p>Параметры конструктора (см. <a class="reference internal" href="#pyinference.fuzzy.set.FuzzySet" title="pyinference.fuzzy.set.FuzzySet"><tt class="xref py py-class docutils literal"><span class="pre">pyinference.fuzzy.set.FuzzySet</span></tt></a>,
+<a class="reference internal" href="#pyinference.fuzzy.set.TriangleClassifier" title="pyinference.fuzzy.set.TriangleClassifier"><tt class="xref py py-class docutils literal"><span class="pre">pyinference.fuzzy.set.TriangleClassifier</span></tt></a>).</p>
+<dl class="docutils">
+<dt>..note::</dt>
+<dd>Так как гауссиана не ограничена по области определения, параметр <cite>cross</cite> конструктора данного класса
+ограничивает область в три сигмы.</dd>
+</dl>
+</dd></dl>
+
+<dl class="class">
+<dt id="pyinference.fuzzy.set.Partition">
+<em class="property">class </em><tt class="descclassname">pyinference.fuzzy.set.</tt><tt class="descname">Partition</tt><big>(</big><em>begin=0.0</em>, <em>end=1.0</em>, <em>domain=None</em>, <em>peaks=None</em>, <em>overlap=1.0</em>, <em>name=''</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/set.html#Partition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.set.Partition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyinference.fuzzy.set.FuzzySet" title="pyinference.fuzzy.set.FuzzySet"><tt class="xref py py-class docutils literal"><span class="pre">pyinference.fuzzy.set.FuzzySet</span></tt></a></p>
+<p>Данный класс создает линейный неравномерный классификатор по точкам, указанным в параметрах.</p>
+<p>Характерной особенностью данного классификатора
+являтеся то, что для каждого элемента носителя сумма принадлежностей всех
+термов равна 1,0. Классификатор строится на действительном интервале.
+Термы классификатора именуются арабскими числами, начиная с 1.</p>
+<dl class="docutils">
+<dt>Синтаксис:</dt>
+<dd><div class="first highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">Clas</span> <span class="o">=</span> <span class="n">Partition</span><span class="p">(</span><span class="n">peaks</span><span class="o">=</span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span> <span class="n">overlap</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Partition</span><span class="p">(</span><span class="n">begin</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">peaks</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span> <span class="n">overlap</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&#39;sample classifier&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="p">[</span><span class="s">&#39;1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mom</span><span class="p">()</span>
+<span class="go">13.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Partition</span><span class="p">(</span><span class="n">begin</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">peaks</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span> <span class="n">overlap</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&#39;sample classifier&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;</span><span class="si">%0.3f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">A</span><span class="p">[</span><span class="s">&#39;1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mom</span><span class="p">()</span>
+<span class="go">&#39;13.430&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">classify</span><span class="p">(</span><span class="mi">14</span><span class="p">)</span>
+<span class="go">&#39;1&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">classify</span><span class="p">(</span><span class="mi">17</span><span class="p">)</span>
+<span class="go">&#39;2&#39;</span>
+</pre></div>
+</div>
+<div class="last highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span>  <span class="o">=</span>  <span class="n">Partition</span><span class="p">(</span><span class="n">begin</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="n">peaks</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span> <span class="n">overlap</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&#39;sample classifier&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">domain</span><span class="o">.</span><span class="n">begin</span>
+<span class="go">10.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">domain</span><span class="o">.</span><span class="n">end</span>
+<span class="go">20.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">name</span>
+<span class="go">&#39;sample classifier&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">sets</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="go">[&#39;1&#39;, &#39;0&#39;, &#39;3&#39;, &#39;2&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="p">[</span><span class="s">&#39;0&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()</span>
+<span class="go">10.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="p">[</span><span class="s">&#39;0&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">domain</span><span class="o">.</span><span class="n">begin</span>
+<span class="go">10.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;</span><span class="si">%0.3f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">A</span><span class="p">[</span><span class="s">&#39;0&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">domain</span><span class="o">.</span><span class="n">end</span>
+<span class="go">&#39;11.710&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;</span><span class="si">%0.3f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">A</span><span class="p">[</span><span class="s">&#39;1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()</span>
+<span class="go">&#39;11.710&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;</span><span class="si">%0.3f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">A</span><span class="p">[</span><span class="s">&#39;1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">domain</span><span class="o">.</span><span class="n">begin</span>
+<span class="go">&#39;11.290&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;</span><span class="si">%0.3f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">A</span><span class="p">[</span><span class="s">&#39;1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">domain</span><span class="o">.</span><span class="n">end</span>
+<span class="go">&#39;14.140&#39;</span>
+</pre></div>
+</div>
+</dd>
+<dt>Параметры:</dt>
+<dd><p class="first">name (<cite>str</cite>): имя классификатора</p>
+<p>begin (<cite>float</cite>): начало области определения</p>
+<p>end (<cite>float</cite>): конец области определения</p>
+<p>domain (<a class="reference internal" href="#pyinference.fuzzy.domain.Domain" title="pyinference.fuzzy.domain.Domain"><tt class="xref py py-class docutils literal"><span class="pre">pyinference.fuzzy.domain.Domain</span></tt></a>): носитель нечеткого множества</p>
+<p>peaks (<cite>list</cite>): массив чисел, представляющих центры интервалов толерантности термов</p>
+<dl class="last docutils">
+<dt>overlap (<cite>float</cite>): параметр, задающий крутизну скатов ФП термов и ширину интервала</dt>
+<dd>толерантности. При overlap = 0 классификатор становится четким, при
+overlap = 1 ФП термов становятся треугольными.</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="class">
+<dt id="pyinference.fuzzy.set.TriangleClassifier">
+<em class="property">class </em><tt class="descclassname">pyinference.fuzzy.set.</tt><tt class="descname">TriangleClassifier</tt><big>(</big><em>begin=0.0</em>, <em>end=1.0</em>, <em>domain=None</em>, <em>name=''</em>, <em>names=None</em>, <em>edge=False</em>, <em>cross=1.0</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/set.html#TriangleClassifier"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.set.TriangleClassifier" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyinference.fuzzy.set.FuzzySet" title="pyinference.fuzzy.set.FuzzySet"><tt class="xref py py-class docutils literal"><span class="pre">pyinference.fuzzy.set.FuzzySet</span></tt></a></p>
+<p>Равномерный классификатор с термами в виде равноскатных треугольных чисел.</p>
+<dl class="docutils">
+<dt>Синтаксис:</dt>
+<dd><div class="first highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">TriangleClassifier</span><span class="p">(</span><span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;low&#39;</span><span class="p">,</span> <span class="s">&#39;middle&#39;</span><span class="p">,</span> <span class="s">&#39;high&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="last highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span>  <span class="o">=</span>  <span class="n">TriangleClassifier</span><span class="p">(</span><span class="n">begin</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span>
+<span class="gp">... </span>                            <span class="n">name</span> <span class="o">=</span> <span class="s">&#39;Sample classifier&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                            <span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;low&#39;</span><span class="p">,</span> <span class="s">&#39;middle&#39;</span><span class="p">,</span> <span class="s">&#39;high&#39;</span><span class="p">],</span>
+<span class="gp">... </span>                            <span class="n">edge</span> <span class="o">=</span> <span class="bp">True</span><span class="p">,</span> <span class="n">cross</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">A</span><span class="o">.</span><span class="n">domain</span><span class="o">.</span><span class="n">begin</span>
+<span class="go">0.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">A</span><span class="o">.</span><span class="n">domain</span><span class="o">.</span><span class="n">end</span>
+<span class="go">100.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">A</span><span class="p">[</span><span class="s">&#39;low&#39;</span><span class="p">]</span>
+<span class="go">25.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">A</span><span class="p">[</span><span class="s">&#39;low&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()</span>
+<span class="go">25.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">A</span><span class="p">[</span><span class="s">&#39;middle&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()</span>
+<span class="go">50.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">A</span><span class="p">[</span><span class="s">&#39;high&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()</span>
+<span class="go">75.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span>  <span class="o">=</span>  <span class="n">TriangleClassifier</span><span class="p">(</span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;low&#39;</span><span class="p">,</span> <span class="s">&#39;middle&#39;</span><span class="p">,</span> <span class="s">&#39;high&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">A</span><span class="o">.</span><span class="n">domain</span><span class="o">.</span><span class="n">begin</span>
+<span class="go">0.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">A</span><span class="o">.</span><span class="n">domain</span><span class="o">.</span><span class="n">end</span>
+<span class="go">1.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">A</span><span class="p">[</span><span class="s">&#39;low&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()</span>
+<span class="go">0.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">A</span><span class="p">[</span><span class="s">&#39;middle&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()</span>
+<span class="go">0.5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">A</span><span class="p">[</span><span class="s">&#39;high&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()</span>
+<span class="go">1.0</span>
+</pre></div>
+</div>
+</dd>
+<dt>Параметры конструктора:</dt>
+<dd><dl class="first last docutils">
+<dt>names (<cite>list</cite>): список строк, каждая из которых представляет собой имя терма,</dt>
+<dd>входящего в данный классификатор. Порядок термов соблюдается.</dd>
+<dt>edge (<cite>bool</cite>): параметр, задающий расположение термов.</dt>
+<dd><p class="first">Если edge = False (<strong>по умолчанию</strong>), то первый и последний термы будут иметь вершины
+в точках, соответственно, начала и конца интервала определения
+классификатора:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;1&#39;</span><span class="p">,</span> <span class="s">&#39;2&#39;</span><span class="p">,</span> <span class="s">&#39;3&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">TriangleClassifier</span><span class="p">(</span><span class="n">names</span> <span class="o">=</span> <span class="n">names</span><span class="p">,</span> <span class="n">edge</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">sets</span><span class="p">[</span><span class="s">&#39;1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()</span>
+<span class="go">0.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">sets</span><span class="p">[</span><span class="s">&#39;2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()</span>
+<span class="go">0.5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">sets</span><span class="p">[</span><span class="s">&#39;3&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()</span>
+<span class="go">1.0</span>
+</pre></div>
+</div>
+<p>Если edge = True, то первый и последний термы будут иметь отступ
+от границ интервала определения, равный отступу между термами:</p>
+<div class="last highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">TriangleClassifier</span><span class="p">(</span><span class="n">names</span> <span class="o">=</span> <span class="n">names</span><span class="p">,</span> <span class="n">edge</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;</span><span class="si">%0.3f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">A</span><span class="o">.</span><span class="n">sets</span><span class="p">[</span><span class="s">&#39;1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()</span>
+<span class="go">&#39;0.167&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;</span><span class="si">%0.3f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">A</span><span class="o">.</span><span class="n">sets</span><span class="p">[</span><span class="s">&#39;2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()</span>
+<span class="go">&#39;0.500&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;</span><span class="si">%0.3f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">A</span><span class="o">.</span><span class="n">sets</span><span class="p">[</span><span class="s">&#39;3&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()</span>
+<span class="go">&#39;0.833&#39;</span>
+</pre></div>
+</div>
+</dd>
+<dt>cross: Параметр задает степень пересечения термов классификатора.</dt>
+<dd><p class="first">Может принимать значения от 0 до бесконечности.
+При cross = 1 (<strong>по умолчанию</strong>) каждый объект области определения принадлежит только
+одному множеству.
+Функции принадлежности соседних термов расположены &#8220;впритык&#8221;.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">TriangleClassifier</span><span class="p">(</span><span class="n">names</span> <span class="o">=</span> <span class="n">names</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">sets</span><span class="p">[</span><span class="s">&#39;1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">domain</span><span class="o">.</span><span class="n">end</span>
+<span class="go">0.25</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">sets</span><span class="p">[</span><span class="s">&#39;2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">domain</span><span class="o">.</span><span class="n">begin</span>
+<span class="go">0.25</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">sets</span><span class="p">[</span><span class="s">&#39;2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">domain</span><span class="o">.</span><span class="n">end</span>
+<span class="go">0.75</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">sets</span><span class="p">[</span><span class="s">&#39;3&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">domain</span><span class="o">.</span><span class="n">begin</span>
+<span class="go">0.75</span>
+</pre></div>
+</div>
+<p>При cross = 2 функции принадлежности строятся таким образом, что каждый
+терм покрывает ровно половину ширины соседних термов. Таким образом,
+каждая точка области определения принадлежит двум нечетким
+подмножествам.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">TriangleClassifier</span><span class="p">(</span><span class="n">names</span> <span class="o">=</span> <span class="n">names</span><span class="p">,</span> <span class="n">cross</span> <span class="o">=</span> <span class="mf">2.0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">sets</span><span class="p">[</span><span class="s">&#39;1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">domain</span><span class="o">.</span><span class="n">end</span>
+<span class="go">0.5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">sets</span><span class="p">[</span><span class="s">&#39;2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()</span>
+<span class="go">0.5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">sets</span><span class="p">[</span><span class="s">&#39;2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">domain</span><span class="o">.</span><span class="n">end</span>
+<span class="go">1.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">sets</span><span class="p">[</span><span class="s">&#39;3&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">domain</span><span class="o">.</span><span class="n">begin</span>
+<span class="go">0.5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">sets</span><span class="p">[</span><span class="s">&#39;3&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()</span>
+<span class="go">1.0</span>
+</pre></div>
+</div>
+<p class="last">При 0 &lt; cross &lt; 1 между термами классификатора появляются интервалы,
+значения в которых не принадлежат ни одному терму.
+При cross = 0 термы вырождаются в точку.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-pyinference.fuzzy.subset">
+<span id="pyinference-fuzzy-subset-module"></span><h2>pyinference.fuzzy.subset module<a class="headerlink" href="#module-pyinference.fuzzy.subset" title="Permalink to this headline">¶</a></h2>
+<p>Модуль реализует набор базовых типов, представляющих разные виды нечетких подмножеств.</p>
+<dl class="class">
+<dt id="pyinference.fuzzy.subset.Algebra">
+<em class="property">class </em><tt class="descclassname">pyinference.fuzzy.subset.</tt><tt class="descname">Algebra</tt><a class="reference internal" href="_modules/pyinference/fuzzy/subset.html#Algebra"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.subset.Algebra" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="pyinference.fuzzy.subset.Gaussian">
+<em class="property">class </em><tt class="descclassname">pyinference.fuzzy.subset.</tt><tt class="descname">Gaussian</tt><big>(</big><em>mu</em>, <em>omega</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/subset.html#Gaussian"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.subset.Gaussian" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyinference.fuzzy.subset.Subset" title="pyinference.fuzzy.subset.Subset"><tt class="xref py py-class docutils literal"><span class="pre">pyinference.fuzzy.subset.Subset</span></tt></a></p>
+<p>Определяет нечеткое множество с функцией принадлежности в виде гауссианы.
+Синтаксис:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">=</span><span class="n">Gaussian</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>    <span class="c"># Стандартное распределение</span>
+</pre></div>
+</div>
+<p>Первый параметр - мода гауссианы, второй - стандартное отклонение (омега)
+Attributes:</p>
+<blockquote>
+<div>mu
+omega</div></blockquote>
+<dl class="method">
+<dt id="pyinference.fuzzy.subset.Gaussian.card">
+<tt class="descname">card</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/subset.html#Gaussian.card"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.subset.Gaussian.card" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyinference.fuzzy.subset.Gaussian.centr">
+<tt class="descname">centr</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/subset.html#Gaussian.centr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.subset.Gaussian.centr" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyinference.fuzzy.subset.Gaussian.mode">
+<tt class="descname">mode</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/subset.html#Gaussian.mode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.subset.Gaussian.mode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyinference.fuzzy.subset.Gaussian.plot">
+<tt class="descname">plot</tt><big>(</big><em>verbose=True</em>, <em>subplot=&lt;module 'pylab' from '/usr/local/lib/python2.7/dist-packages/matplotlib-1.4.1-py2.7-linux-i686.egg/pylab.pyc'&gt;</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/subset.html#Gaussian.plot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.subset.Gaussian.plot" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyinference.fuzzy.subset.Gaussian.value">
+<tt class="descname">value</tt><big>(</big><em>x</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/subset.html#Gaussian.value"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.subset.Gaussian.value" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pyinference.fuzzy.subset.Interval">
+<em class="property">class </em><tt class="descclassname">pyinference.fuzzy.subset.</tt><tt class="descname">Interval</tt><big>(</big><em>a</em>, <em>b</em>, <em>x=1.0</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/subset.html#Interval"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.subset.Interval" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyinference.fuzzy.subset.Trapezoidal" title="pyinference.fuzzy.subset.Trapezoidal"><tt class="xref py py-class docutils literal"><span class="pre">pyinference.fuzzy.subset.Trapezoidal</span></tt></a></p>
+<p>Определяет четкий интервал как частный вид нечеткого множества. Конструктор
+принимает два параметра - границы интервала.
+Синтаксис:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">=</span><span class="n">Interval</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">6.4</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="pyinference.fuzzy.subset.Interval.card">
+<tt class="descname">card</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/subset.html#Interval.card"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.subset.Interval.card" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyinference.fuzzy.subset.Interval.value">
+<tt class="descname">value</tt><big>(</big><em>value</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/subset.html#Interval.value"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.subset.Interval.value" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pyinference.fuzzy.subset.NumbersAlgebra">
+<em class="property">class </em><tt class="descclassname">pyinference.fuzzy.subset.</tt><tt class="descname">NumbersAlgebra</tt><a class="reference internal" href="_modules/pyinference/fuzzy/subset.html#NumbersAlgebra"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.subset.NumbersAlgebra" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyinference.fuzzy.subset.Algebra" title="pyinference.fuzzy.subset.Algebra"><tt class="xref py py-class docutils literal"><span class="pre">pyinference.fuzzy.subset.Algebra</span></tt></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="pyinference.fuzzy.subset.Point">
+<em class="property">class </em><tt class="descclassname">pyinference.fuzzy.subset.</tt><tt class="descname">Point</tt><big>(</big><em>a</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/subset.html#Point"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.subset.Point" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyinference.fuzzy.subset.Trapezoidal" title="pyinference.fuzzy.subset.Trapezoidal"><tt class="xref py py-class docutils literal"><span class="pre">pyinference.fuzzy.subset.Trapezoidal</span></tt></a></p>
+<p>Реализует нечеткое множество состоящее из одной точки.
+Синтаксис:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">=</span><span class="n">Point</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="pyinference.fuzzy.subset.Point.card">
+<tt class="descname">card</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/subset.html#Point.card"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.subset.Point.card" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyinference.fuzzy.subset.Point.plot">
+<tt class="descname">plot</tt><big>(</big><em>verbose=True</em>, <em>subplot=&lt;module 'pylab' from '/usr/local/lib/python2.7/dist-packages/matplotlib-1.4.1-py2.7-linux-i686.egg/pylab.pyc'&gt;</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/subset.html#Point.plot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.subset.Point.plot" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyinference.fuzzy.subset.Point.value">
+<tt class="descname">value</tt><big>(</big><em>x</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/subset.html#Point.value"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.subset.Point.value" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pyinference.fuzzy.subset.Subset">
+<em class="property">class </em><tt class="descclassname">pyinference.fuzzy.subset.</tt><tt class="descname">Subset</tt><big>(</big><em>begin=0.0</em>, <em>end=1.0</em>, <em>domain=None</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/subset.html#Subset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.subset.Subset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>Нечеткое подмножество.</p>
+<p>Реализует функциональность нечеткого подмножества общего вида.
+Имеет атрибуты, указывающие начало и конец интервала определения подмножества (для подмножеств, определенных на R).</p>
+<dl class="docutils">
+<dt>Syntax:</dt>
+<dd><div class="first last highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Subset</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">domain</span><span class="o">.</span><span class="n">begin</span>
+<span class="go">0.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">domain</span><span class="o">.</span><span class="n">end</span>
+<span class="go">1.0</span>
+</pre></div>
+</div>
+</dd>
+<dt>Attributes:</dt>
+<dd><p class="first">values (dict):</p>
+<p>points (dict):</p>
+<p class="last">domain (pyinference.fuzzy.domain.Domain):</p>
+</dd>
+<dt>Kwargs:</dt>
+<dd><p class="first">begin (float):</p>
+<p>end (float):</p>
+<p class="last">begin (pyinference.fuzzy.domain.Domain):</p>
+</dd>
+</dl>
+<dl class="method">
+<dt id="pyinference.fuzzy.subset.Subset.card">
+<tt class="descname">card</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/subset.html#Subset.card"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.subset.Subset.card" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает мощность нечеткого подмножества
+Синтаксис:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">T</span><span class="o">=</span><span class="n">Triangle</span><span class="p">(</span><span class="o">-</span><span class="mf">1.4</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">2.6</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="nb">round</span><span class="p">(</span><span class="n">T</span><span class="o">.</span><span class="n">card</span><span class="p">(),</span> <span class="mi">2</span><span class="p">)</span> 
+<span class="go">4.0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyinference.fuzzy.subset.Subset.centr">
+<tt class="descname">centr</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/subset.html#Subset.centr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.subset.Subset.centr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Вычисляет центроид (центр масс) нечеткого подмножества.
+Зависит от конфигурации ФП. Работает как на непрерывных
+ФП заданного вида, так и на ФП произвольного вида.
+&gt;&gt;&gt; A=Triangle(0.2, 0.3, 0.4)
+&gt;&gt;&gt; print round(A.centr(), 3)
+0.3
+&gt;&gt;&gt; A=Trapezoidal((1.0, 2.0, 5.0, 6.0))
+&gt;&gt;&gt; &#8220;%0.2f&#8221; % A.centr()
+&#8216;3.50&#8217;</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyinference.fuzzy.subset.Subset.char">
+<tt class="descname">char</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/subset.html#Subset.char"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.subset.Subset.char" title="Permalink to this definition">¶</a></dt>
+<dd><p>Выводит на экран список элементов носителя и соответствующих им значений
+нечеткого множества. Шаг перебора непрерывного носителя совпадает с
+частотой дискретизации при численных вычислениях
+Синтаксис:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Triangle</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">domain</span><span class="o">.</span><span class="n">acc</span><span class="o">=</span><span class="mi">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">char</span><span class="p">()</span>
+<span class="go">1.0 0.0</span>
+<span class="go">1.6 0.6</span>
+<span class="go">2.2 0.9</span>
+<span class="go">2.8 0.6</span>
+<span class="go">3.4 0.3</span>
+<span class="go">4.0 0.0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyinference.fuzzy.subset.Subset.euclid_distance">
+<tt class="descname">euclid_distance</tt><big>(</big><em>other</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/subset.html#Subset.euclid_distance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.subset.Subset.euclid_distance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyinference.fuzzy.subset.Subset.hamming_distance">
+<tt class="descname">hamming_distance</tt><big>(</big><em>other</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/subset.html#Subset.hamming_distance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.subset.Subset.hamming_distance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyinference.fuzzy.subset.Subset.level">
+<tt class="descname">level</tt><big>(</big><em>lvl</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/subset.html#Subset.level"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.subset.Subset.level" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyinference.fuzzy.subset.Subset.mode">
+<tt class="descname">mode</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/subset.html#Subset.mode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.subset.Subset.mode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает моду (точку максимума) нечеткого подмножества.</p>
+<dl class="docutils">
+<dt>Синтаксис:</dt>
+<dd><div class="first last highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Triangle</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">mode</span><span class="p">()</span>
+<span class="go">20.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">B</span> <span class="o">=</span> <span class="n">Triangle</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">B</span><span class="o">.</span><span class="n">mode</span><span class="p">()</span>
+<span class="go">40.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">C</span> <span class="o">=</span> <span class="n">A</span> <span class="o">+</span> <span class="n">B</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;</span><span class="si">%0.3f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">C</span><span class="o">.</span><span class="n">mode</span><span class="p">()</span>
+<span class="go">&#39;20.040&#39;</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyinference.fuzzy.subset.Subset.normalize">
+<tt class="descname">normalize</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/subset.html#Subset.normalize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.subset.Subset.normalize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает нормированное по высоте нечеткое множество.
+Синтаксис:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Triangle</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">domain</span><span class="o">.</span><span class="n">acc</span><span class="o">=</span><span class="mi">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">B</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="mf">0.5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;</span><span class="si">%0.3f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">B</span><span class="o">.</span><span class="n">card</span><span class="p">()</span>
+<span class="go">&#39;0.720&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;</span><span class="si">%0.3f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">A</span><span class="o">.</span><span class="n">card</span><span class="p">()</span>
+<span class="go">&#39;1.500&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">C</span> <span class="o">=</span> <span class="n">B</span><span class="o">.</span><span class="n">normalize</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;</span><span class="si">%0.3f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">C</span><span class="o">.</span><span class="n">card</span><span class="p">()</span>
+<span class="go">&#39;1.600&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;</span><span class="si">%0.3f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">B</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="n">B</span><span class="o">.</span><span class="n">mode</span><span class="p">())</span>
+<span class="go">&#39;0.450&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;</span><span class="si">%0.3f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">C</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="n">C</span><span class="o">.</span><span class="n">mode</span><span class="p">())</span>
+<span class="go">&#39;1.000&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyinference.fuzzy.subset.Subset.plot">
+<tt class="descname">plot</tt><big>(</big><em>verbose=True</em>, <em>subplot=&lt;module 'pylab' from '/usr/local/lib/python2.7/dist-packages/matplotlib-1.4.1-py2.7-linux-i686.egg/pylab.pyc'&gt;</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/subset.html#Subset.plot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.subset.Subset.plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Отображает нечеткое множество графически. Только для нечетких множеств,
+определенных на носителе типа RationalRange. Параметр verbose
+определяет отображение на графике дополнительной информации.
+Синтаксис:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">=</span><span class="n">Triangle</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">3.8</span><span class="p">,</span> <span class="mf">10.2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">verbose</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyinference.fuzzy.subset.Subset.sup">
+<tt class="descname">sup</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/subset.html#Subset.sup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.subset.Subset.sup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyinference.fuzzy.subset.Subset.value">
+<tt class="descname">value</tt><big>(</big><em>key</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/subset.html#Subset.value"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.subset.Subset.value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает уровень принадлежности точки нечеткому подмножеству.
+Данный метод непосредственно и является программной имплементацией
+функции принадлежности.
+&gt;&gt;&gt; A = Gaussian(1.0, 1.0)
+&gt;&gt;&gt; A.value(0.5)
+0.8825
+&gt;&gt;&gt; A.value(1.5)
+0.8825
+&gt;&gt;&gt; A.value(1.0)
+1.0
+&gt;&gt;&gt; A.value(0.0)
+0.60653</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pyinference.fuzzy.subset.SubsetAlgebra">
+<em class="property">class </em><tt class="descclassname">pyinference.fuzzy.subset.</tt><tt class="descname">SubsetAlgebra</tt><big>(</big><em>tnorm=None</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/subset.html#SubsetAlgebra"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.subset.SubsetAlgebra" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyinference.fuzzy.subset.Algebra" title="pyinference.fuzzy.subset.Algebra"><tt class="xref py py-class docutils literal"><span class="pre">pyinference.fuzzy.subset.Algebra</span></tt></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="pyinference.fuzzy.subset.Trapezoidal">
+<em class="property">class </em><tt class="descclassname">pyinference.fuzzy.subset.</tt><tt class="descname">Trapezoidal</tt><big>(</big><em>points</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/subset.html#Trapezoidal"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.subset.Trapezoidal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyinference.fuzzy.subset.Subset" title="pyinference.fuzzy.subset.Subset"><tt class="xref py py-class docutils literal"><span class="pre">pyinference.fuzzy.subset.Subset</span></tt></a></p>
+<p>Нечеткое множество с трапециевидной функцией принадлежности.
+Синтаксис:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Trapezoidal</span><span class="p">((</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.8</span><span class="p">,</span> <span class="mf">6.6</span><span class="p">))</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Параметры:</dt>
+<dd><dl class="first last docutils">
+<dt>begin</dt>
+<dd>задает нижнюю границу левого ската трапеции. Значение
+принадлежности в этой точке равно 0.</dd>
+<dt>begin_tol</dt>
+<dd>задает нижнюю границу интервала толернтности. Значение
+принадлежности равно 1.</dd>
+<dt>end_tol</dt>
+<dd>верхняя граница интервала толерантности. Значение - 1.</dd>
+<dt>end</dt>
+<dd>верхняя граница правого ската трапеции. Значение - 0.</dd>
+<dt>domain</dt>
+<dd>Этим параметром можно задать границы области определения нечеткого
+множества. Подробнее см. RationalRange и IntegerRange.</dd>
+<dt>Attributes:</dt>
+<dd>begin_tol
+end_tol</dd>
+</dl>
+</dd>
+</dl>
+<dl class="method">
+<dt id="pyinference.fuzzy.subset.Trapezoidal.card">
+<tt class="descname">card</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/subset.html#Trapezoidal.card"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.subset.Trapezoidal.card" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyinference.fuzzy.subset.Trapezoidal.median">
+<tt class="descname">median</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/subset.html#Trapezoidal.median"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.subset.Trapezoidal.median" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyinference.fuzzy.subset.Trapezoidal.mode">
+<tt class="descname">mode</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/subset.html#Trapezoidal.mode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.subset.Trapezoidal.mode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyinference.fuzzy.subset.Trapezoidal.mom">
+<tt class="descname">mom</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/subset.html#Trapezoidal.mom"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.subset.Trapezoidal.mom" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pyinference.fuzzy.subset.Triangle">
+<em class="property">class </em><tt class="descclassname">pyinference.fuzzy.subset.</tt><tt class="descname">Triangle</tt><big>(</big><em>a</em>, <em>b</em>, <em>c</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/subset.html#Triangle"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.subset.Triangle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyinference.fuzzy.subset.Trapezoidal" title="pyinference.fuzzy.subset.Trapezoidal"><tt class="xref py py-class docutils literal"><span class="pre">pyinference.fuzzy.subset.Trapezoidal</span></tt></a></p>
+<p>Нечеткое множество с функцией принадлежности в виде треугольника.
+Фактически, представляет собой частный случай трапециевидного нечеткого
+множества с вырожденным в точку интервалом толерантности. Этот класс
+создан для быстрого создания нечетких множеств наиболее распространенной
+(треугольной) формы.
+Синтаксис:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">=</span><span class="n">Triangle</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.3</span><span class="p">,</span> <span class="mf">5.6</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Параметры:</dt>
+<dd>Принимает три параметра, по порядку: нижняя раница ската, точка моды,
+верхняя граница ската. Числа должны быть упорядочены по возрастанию.</dd>
+<dt>Attributes:</dt>
+<dd>a
+b
+c</dd>
+</dl>
+<dl class="method">
+<dt id="pyinference.fuzzy.subset.Triangle.card">
+<tt class="descname">card</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/subset.html#Triangle.card"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.subset.Triangle.card" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyinference.fuzzy.subset.Triangle.mode">
+<tt class="descname">mode</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/subset.html#Triangle.mode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.subset.Triangle.mode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-pyinference.fuzzy.tnorm">
+<span id="pyinference-fuzzy-tnorm-module"></span><h2>pyinference.fuzzy.tnorm module<a class="headerlink" href="#module-pyinference.fuzzy.tnorm" title="Permalink to this headline">¶</a></h2>
+<p>Модуль реализует набор простых и параметрических треугольных норм и конорм.</p>
+<dl class="class">
+<dt id="pyinference.fuzzy.tnorm.Drastic">
+<em class="property">class </em><tt class="descclassname">pyinference.fuzzy.tnorm.</tt><tt class="descname">Drastic</tt><a class="reference internal" href="_modules/pyinference/fuzzy/tnorm.html#Drastic"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.tnorm.Drastic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyinference.fuzzy.tnorm.Tnorm" title="pyinference.fuzzy.tnorm.Tnorm"><tt class="xref py py-class docutils literal"><span class="pre">pyinference.fuzzy.tnorm.Tnorm</span></tt></a></p>
+<dl class="method">
+<dt id="pyinference.fuzzy.tnorm.Drastic.conorm">
+<tt class="descname">conorm</tt><big>(</big><em>i</em>, <em>j</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/tnorm.html#Drastic.conorm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.tnorm.Drastic.conorm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyinference.fuzzy.tnorm.Drastic.norm">
+<tt class="descname">norm</tt><big>(</big><em>i</em>, <em>j</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/tnorm.html#Drastic.norm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.tnorm.Drastic.norm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pyinference.fuzzy.tnorm.Margin">
+<em class="property">class </em><tt class="descclassname">pyinference.fuzzy.tnorm.</tt><tt class="descname">Margin</tt><a class="reference internal" href="_modules/pyinference/fuzzy/tnorm.html#Margin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.tnorm.Margin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyinference.fuzzy.tnorm.Tnorm" title="pyinference.fuzzy.tnorm.Tnorm"><tt class="xref py py-class docutils literal"><span class="pre">pyinference.fuzzy.tnorm.Tnorm</span></tt></a></p>
+<dl class="method">
+<dt id="pyinference.fuzzy.tnorm.Margin.conorm">
+<tt class="descname">conorm</tt><big>(</big><em>i</em>, <em>j</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/tnorm.html#Margin.conorm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.tnorm.Margin.conorm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyinference.fuzzy.tnorm.Margin.norm">
+<tt class="descname">norm</tt><big>(</big><em>i</em>, <em>j</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/tnorm.html#Margin.norm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.tnorm.Margin.norm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pyinference.fuzzy.tnorm.MinMax">
+<em class="property">class </em><tt class="descclassname">pyinference.fuzzy.tnorm.</tt><tt class="descname">MinMax</tt><a class="reference internal" href="_modules/pyinference/fuzzy/tnorm.html#MinMax"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.tnorm.MinMax" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyinference.fuzzy.tnorm.Tnorm" title="pyinference.fuzzy.tnorm.Tnorm"><tt class="xref py py-class docutils literal"><span class="pre">pyinference.fuzzy.tnorm.Tnorm</span></tt></a></p>
+<dl class="method">
+<dt id="pyinference.fuzzy.tnorm.MinMax.conorm">
+<tt class="descname">conorm</tt><big>(</big><em>i</em>, <em>j</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/tnorm.html#MinMax.conorm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.tnorm.MinMax.conorm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyinference.fuzzy.tnorm.MinMax.norm">
+<tt class="descname">norm</tt><big>(</big><em>i</em>, <em>j</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/tnorm.html#MinMax.norm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.tnorm.MinMax.norm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pyinference.fuzzy.tnorm.ParametricNorm">
+<em class="property">class </em><tt class="descclassname">pyinference.fuzzy.tnorm.</tt><tt class="descname">ParametricNorm</tt><big>(</big><em>param</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/tnorm.html#ParametricNorm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.tnorm.ParametricNorm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyinference.fuzzy.tnorm.Tnorm" title="pyinference.fuzzy.tnorm.Tnorm"><tt class="xref py py-class docutils literal"><span class="pre">pyinference.fuzzy.tnorm.Tnorm</span></tt></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="pyinference.fuzzy.tnorm.SumProd">
+<em class="property">class </em><tt class="descclassname">pyinference.fuzzy.tnorm.</tt><tt class="descname">SumProd</tt><a class="reference internal" href="_modules/pyinference/fuzzy/tnorm.html#SumProd"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.tnorm.SumProd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyinference.fuzzy.tnorm.Tnorm" title="pyinference.fuzzy.tnorm.Tnorm"><tt class="xref py py-class docutils literal"><span class="pre">pyinference.fuzzy.tnorm.Tnorm</span></tt></a></p>
+<dl class="method">
+<dt id="pyinference.fuzzy.tnorm.SumProd.conorm">
+<tt class="descname">conorm</tt><big>(</big><em>i</em>, <em>j</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/tnorm.html#SumProd.conorm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.tnorm.SumProd.conorm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyinference.fuzzy.tnorm.SumProd.norm">
+<tt class="descname">norm</tt><big>(</big><em>i</em>, <em>j</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/tnorm.html#SumProd.norm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.tnorm.SumProd.norm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pyinference.fuzzy.tnorm.Tnorm">
+<em class="property">class </em><tt class="descclassname">pyinference.fuzzy.tnorm.</tt><tt class="descname">Tnorm</tt><a class="reference internal" href="_modules/pyinference/fuzzy/tnorm.html#Tnorm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.tnorm.Tnorm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<dl class="method">
+<dt id="pyinference.fuzzy.tnorm.Tnorm.conorm">
+<tt class="descname">conorm</tt><big>(</big><em>i</em>, <em>j</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/tnorm.html#Tnorm.conorm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.tnorm.Tnorm.conorm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyinference.fuzzy.tnorm.Tnorm.norm">
+<tt class="descname">norm</tt><big>(</big><em>i</em>, <em>j</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/tnorm.html#Tnorm.norm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.tnorm.Tnorm.norm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pyinference.fuzzy.tnorm.Tnorm1">
+<em class="property">class </em><tt class="descclassname">pyinference.fuzzy.tnorm.</tt><tt class="descname">Tnorm1</tt><big>(</big><em>param</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/tnorm.html#Tnorm1"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.tnorm.Tnorm1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyinference.fuzzy.tnorm.ParametricNorm" title="pyinference.fuzzy.tnorm.ParametricNorm"><tt class="xref py py-class docutils literal"><span class="pre">pyinference.fuzzy.tnorm.ParametricNorm</span></tt></a></p>
+<dl class="method">
+<dt id="pyinference.fuzzy.tnorm.Tnorm1.conorm">
+<tt class="descname">conorm</tt><big>(</big><em>i</em>, <em>j</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/tnorm.html#Tnorm1.conorm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.tnorm.Tnorm1.conorm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyinference.fuzzy.tnorm.Tnorm1.norm">
+<tt class="descname">norm</tt><big>(</big><em>i</em>, <em>j</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/tnorm.html#Tnorm1.norm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.tnorm.Tnorm1.norm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pyinference.fuzzy.tnorm.Tnorm2">
+<em class="property">class </em><tt class="descclassname">pyinference.fuzzy.tnorm.</tt><tt class="descname">Tnorm2</tt><big>(</big><em>param</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/tnorm.html#Tnorm2"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.tnorm.Tnorm2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyinference.fuzzy.tnorm.ParametricNorm" title="pyinference.fuzzy.tnorm.ParametricNorm"><tt class="xref py py-class docutils literal"><span class="pre">pyinference.fuzzy.tnorm.ParametricNorm</span></tt></a></p>
+<dl class="method">
+<dt id="pyinference.fuzzy.tnorm.Tnorm2.conorm">
+<tt class="descname">conorm</tt><big>(</big><em>i</em>, <em>j</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/tnorm.html#Tnorm2.conorm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.tnorm.Tnorm2.conorm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyinference.fuzzy.tnorm.Tnorm2.norm">
+<tt class="descname">norm</tt><big>(</big><em>i</em>, <em>j</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/tnorm.html#Tnorm2.norm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.tnorm.Tnorm2.norm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pyinference.fuzzy.tnorm.Tnorm3">
+<em class="property">class </em><tt class="descclassname">pyinference.fuzzy.tnorm.</tt><tt class="descname">Tnorm3</tt><big>(</big><em>param</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/tnorm.html#Tnorm3"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.tnorm.Tnorm3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyinference.fuzzy.tnorm.ParametricNorm" title="pyinference.fuzzy.tnorm.ParametricNorm"><tt class="xref py py-class docutils literal"><span class="pre">pyinference.fuzzy.tnorm.ParametricNorm</span></tt></a></p>
+<dl class="method">
+<dt id="pyinference.fuzzy.tnorm.Tnorm3.conorm">
+<tt class="descname">conorm</tt><big>(</big><em>i</em>, <em>j</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/tnorm.html#Tnorm3.conorm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.tnorm.Tnorm3.conorm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyinference.fuzzy.tnorm.Tnorm3.norm">
+<tt class="descname">norm</tt><big>(</big><em>i</em>, <em>j</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/tnorm.html#Tnorm3.norm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.tnorm.Tnorm3.norm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pyinference.fuzzy.tnorm.Tnorm4">
+<em class="property">class </em><tt class="descclassname">pyinference.fuzzy.tnorm.</tt><tt class="descname">Tnorm4</tt><big>(</big><em>param</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/tnorm.html#Tnorm4"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.tnorm.Tnorm4" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyinference.fuzzy.tnorm.ParametricNorm" title="pyinference.fuzzy.tnorm.ParametricNorm"><tt class="xref py py-class docutils literal"><span class="pre">pyinference.fuzzy.tnorm.ParametricNorm</span></tt></a></p>
+<dl class="method">
+<dt id="pyinference.fuzzy.tnorm.Tnorm4.conorm">
+<tt class="descname">conorm</tt><big>(</big><em>i</em>, <em>j</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/tnorm.html#Tnorm4.conorm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.tnorm.Tnorm4.conorm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyinference.fuzzy.tnorm.Tnorm4.norm">
+<tt class="descname">norm</tt><big>(</big><em>i</em>, <em>j</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/tnorm.html#Tnorm4.norm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.tnorm.Tnorm4.norm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pyinference.fuzzy.tnorm.Tnorm5">
+<em class="property">class </em><tt class="descclassname">pyinference.fuzzy.tnorm.</tt><tt class="descname">Tnorm5</tt><big>(</big><em>param</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/tnorm.html#Tnorm5"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.tnorm.Tnorm5" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyinference.fuzzy.tnorm.ParametricNorm" title="pyinference.fuzzy.tnorm.ParametricNorm"><tt class="xref py py-class docutils literal"><span class="pre">pyinference.fuzzy.tnorm.ParametricNorm</span></tt></a></p>
+<dl class="method">
+<dt id="pyinference.fuzzy.tnorm.Tnorm5.conorm">
+<tt class="descname">conorm</tt><big>(</big><em>i</em>, <em>j</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/tnorm.html#Tnorm5.conorm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.tnorm.Tnorm5.conorm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyinference.fuzzy.tnorm.Tnorm5.norm">
+<tt class="descname">norm</tt><big>(</big><em>i</em>, <em>j</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/tnorm.html#Tnorm5.norm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.tnorm.Tnorm5.norm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pyinference.fuzzy.tnorm.Tnorm6">
+<em class="property">class </em><tt class="descclassname">pyinference.fuzzy.tnorm.</tt><tt class="descname">Tnorm6</tt><big>(</big><em>param</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/tnorm.html#Tnorm6"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.tnorm.Tnorm6" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyinference.fuzzy.tnorm.ParametricNorm" title="pyinference.fuzzy.tnorm.ParametricNorm"><tt class="xref py py-class docutils literal"><span class="pre">pyinference.fuzzy.tnorm.ParametricNorm</span></tt></a></p>
+<dl class="method">
+<dt id="pyinference.fuzzy.tnorm.Tnorm6.conorm">
+<tt class="descname">conorm</tt><big>(</big><em>i</em>, <em>j</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/tnorm.html#Tnorm6.conorm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.tnorm.Tnorm6.conorm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyinference.fuzzy.tnorm.Tnorm6.norm">
+<tt class="descname">norm</tt><big>(</big><em>i</em>, <em>j</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/tnorm.html#Tnorm6.norm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.tnorm.Tnorm6.norm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pyinference.fuzzy.tnorm.Tnorm7">
+<em class="property">class </em><tt class="descclassname">pyinference.fuzzy.tnorm.</tt><tt class="descname">Tnorm7</tt><big>(</big><em>param</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/tnorm.html#Tnorm7"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.tnorm.Tnorm7" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyinference.fuzzy.tnorm.ParametricNorm" title="pyinference.fuzzy.tnorm.ParametricNorm"><tt class="xref py py-class docutils literal"><span class="pre">pyinference.fuzzy.tnorm.ParametricNorm</span></tt></a></p>
+<dl class="method">
+<dt id="pyinference.fuzzy.tnorm.Tnorm7.conorm">
+<tt class="descname">conorm</tt><big>(</big><em>i</em>, <em>j</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/tnorm.html#Tnorm7.conorm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.tnorm.Tnorm7.conorm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyinference.fuzzy.tnorm.Tnorm7.norm">
+<tt class="descname">norm</tt><big>(</big><em>i</em>, <em>j</em><big>)</big><a class="reference internal" href="_modules/pyinference/fuzzy/tnorm.html#Tnorm7.norm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyinference.fuzzy.tnorm.Tnorm7.norm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
 <div class="section" id="module-pyinference.fuzzy">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pyinference.fuzzy" title="Permalink to this headline">¶</a></h2>
@@ -99,6 +1183,10 @@
   <ul>
 <li><a class="reference internal" href="#">pyinference.fuzzy package</a><ul>
 <li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-pyinference.fuzzy.domain">pyinference.fuzzy.domain module</a></li>
+<li><a class="reference internal" href="#module-pyinference.fuzzy.set">pyinference.fuzzy.set module</a></li>
+<li><a class="reference internal" href="#module-pyinference.fuzzy.subset">pyinference.fuzzy.subset module</a></li>
+<li><a class="reference internal" href="#module-pyinference.fuzzy.tnorm">pyinference.fuzzy.tnorm module</a></li>
 <li><a class="reference internal" href="#module-pyinference.fuzzy">Module contents</a></li>
 </ul>
 </li>
@@ -108,8 +1196,8 @@
   <p class="topless"><a href="pyinference.html"
                         title="previous chapter">pyinference package</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="pyinference.fuzzy.domain.html"
-                        title="next chapter">pyinference.fuzzy.domain module</a></p>
+  <p class="topless"><a href="pyinference.inference.html"
+                        title="next chapter">pyinference.inference package</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/pyinference.fuzzy.txt"
@@ -142,18 +1230,18 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="pyinference.fuzzy.domain.html" title="pyinference.fuzzy.domain module"
+          <a href="pyinference.inference.html" title="pyinference.inference package"
              >next</a> |</li>
         <li class="right" >
           <a href="pyinference.html" title="pyinference package"
              >previous</a> |</li>
-        <li><a href="index.html">pyinference 0.1 documentation</a> &raquo;</li>
+        <li><a href="index.html">pyinference 0.4.0 documentation</a> &raquo;</li>
           <li><a href="pyinference.html" >pyinference package</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2014, sejros.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
     </div>
   </body>
 </html>

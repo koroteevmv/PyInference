@@ -4,12 +4,38 @@ pyinference.fuzzy package
 Submodules
 ----------
 
-.. toctree::
+pyinference.fuzzy.domain module
+-------------------------------
 
-   pyinference.fuzzy.domain
-   pyinference.fuzzy.set
-   pyinference.fuzzy.subset
-   pyinference.fuzzy.tnorm
+.. automodule:: pyinference.fuzzy.domain
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pyinference.fuzzy.set module
+----------------------------
+
+.. automodule:: pyinference.fuzzy.set
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pyinference.fuzzy.subset module
+-------------------------------
+
+.. automodule:: pyinference.fuzzy.subset
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pyinference.fuzzy.tnorm module
+------------------------------
+
+.. automodule:: pyinference.fuzzy.tnorm
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 
 Module contents
 ---------------

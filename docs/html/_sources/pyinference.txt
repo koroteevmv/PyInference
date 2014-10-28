@@ -7,13 +7,7 @@ Subpackages
 .. toctree::
 
     pyinference.fuzzy
-
-Submodules
-----------
-
-.. toctree::
-
-   pyinference.inference
+    pyinference.inference
 
 Module contents
 ---------------

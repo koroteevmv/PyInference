@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>pyinference.fuzzy.subset &mdash; pyinference 0.1 documentation</title>
+    <title>pyinference.fuzzy.subset &mdash; pyinference 0.4.0 documentation</title>
     
     <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '0.1',
+        VERSION:     '0.4.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <link rel="top" title="pyinference 0.1 documentation" href="../../../index.html" />
+    <link rel="top" title="pyinference 0.4.0 documentation" href="../../../index.html" />
     <link rel="up" title="Module code" href="../../index.html" /> 
   </head>
   <body>
@@ -36,7 +36,7 @@
         <li class="right" >
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="../../../index.html">pyinference 0.1 documentation</a> &raquo;</li>
+        <li><a href="../../../index.html">pyinference 0.4.0 documentation</a> &raquo;</li>
           <li><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -59,7 +59,7 @@ import pylab as p
 import math
 
 
-<div class="viewcode-block" id="Subset"><a class="viewcode-back" href="../../../pyinference.fuzzy.subset.html#pyinference.fuzzy.subset.Subset">[docs]</a>class Subset(object):
+<div class="viewcode-block" id="Subset"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.subset.Subset">[docs]</a>class Subset(object):
     &quot;&quot;&quot; Нечеткое подмножество.
 
     Реализует функциональность нечеткого подмножества общего вида.
@@ -102,7 +102,7 @@ import math
 
         self._algebra = SubsetAlgebra()
 
-<div class="viewcode-block" id="Subset.value"><a class="viewcode-back" href="../../../pyinference.fuzzy.subset.html#pyinference.fuzzy.subset.Subset.value">[docs]</a>    def value(self, key):
+<div class="viewcode-block" id="Subset.value"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.subset.Subset.value">[docs]</a>    def value(self, key):
         &quot;&quot;&quot;
         Возвращает уровень принадлежности точки нечеткому подмножеству.
         Данный метод непосредственно и является программной имплементацией
@@ -132,7 +132,7 @@ import math
                 if i &lt; key &lt; j:
                     return (key - i) * (self[j] - self[i]) / (j - i) + self[i]
 </div>
-<div class="viewcode-block" id="Subset.char"><a class="viewcode-back" href="../../../pyinference.fuzzy.subset.html#pyinference.fuzzy.subset.Subset.char">[docs]</a>    def char(self):
+<div class="viewcode-block" id="Subset.char"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.subset.Subset.char">[docs]</a>    def char(self):
         &quot;&quot;&quot;
         Выводит на экран список элементов носителя и соответствующих им значений
         нечеткого множества. Шаг перебора непрерывного носителя совпадает с
@@ -152,7 +152,7 @@ import math
         for i in self.domain:
             print i, self.value(i)
 </div>
-<div class="viewcode-block" id="Subset.normalize"><a class="viewcode-back" href="../../../pyinference.fuzzy.subset.html#pyinference.fuzzy.subset.Subset.normalize">[docs]</a>    def normalize(self):
+<div class="viewcode-block" id="Subset.normalize"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.subset.Subset.normalize">[docs]</a>    def normalize(self):
         &quot;&quot;&quot;
         Возвращает нормированное по высоте нечеткое множество.
         Синтаксис:
@@ -180,14 +180,14 @@ import math
             res[i] = self.value(i) / sup
         return res
 </div>
-<div class="viewcode-block" id="Subset.sup"><a class="viewcode-back" href="../../../pyinference.fuzzy.subset.html#pyinference.fuzzy.subset.Subset.sup">[docs]</a>    def sup(self):
+<div class="viewcode-block" id="Subset.sup"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.subset.Subset.sup">[docs]</a>    def sup(self):
         sup = 0.0
         for i in self.domain:
             if self.value(i) &gt; sup:
                 sup = self.value(i)
         return sup
 </div>
-<div class="viewcode-block" id="Subset.plot"><a class="viewcode-back" href="../../../pyinference.fuzzy.subset.html#pyinference.fuzzy.subset.Subset.plot">[docs]</a>    def plot(self, verbose=True, subplot=p):
+<div class="viewcode-block" id="Subset.plot"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.subset.Subset.plot">[docs]</a>    def plot(self, verbose=True, subplot=p):
         &quot;&quot;&quot;
         Отображает нечеткое множество графически. Только для нечетких множеств,
         определенных на носителе типа RationalRange. Параметр verbose
@@ -216,7 +216,7 @@ import math
             for i in self.points.iterkeys():
                 subplot.text(i, self.points[i], str(i))
 </div>
-<div class="viewcode-block" id="Subset.level"><a class="viewcode-back" href="../../../pyinference.fuzzy.subset.html#pyinference.fuzzy.subset.Subset.level">[docs]</a>    def level(self, lvl):
+<div class="viewcode-block" id="Subset.level"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.subset.Subset.level">[docs]</a>    def level(self, lvl):
         begin = self.domain.begin
         end = self.domain.end
         for i in self.domain:
@@ -238,7 +238,7 @@ import math
             raise KeyError
         self.values[key] = value
 
-<div class="viewcode-block" id="Subset.centr"><a class="viewcode-back" href="../../../pyinference.fuzzy.subset.html#pyinference.fuzzy.subset.Subset.centr">[docs]</a>    def centr(self):
+<div class="viewcode-block" id="Subset.centr"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.subset.Subset.centr">[docs]</a>    def centr(self):
         &quot;&quot;&quot;
         Вычисляет центроид (центр масс) нечеткого подмножества.
         Зависит от конфигурации ФП. Работает как на непрерывных
@@ -260,7 +260,7 @@ import math
         else:
             return (self.domain.end - self.domain.begin) / 2
 </div>
-<div class="viewcode-block" id="Subset.card"><a class="viewcode-back" href="../../../pyinference.fuzzy.subset.html#pyinference.fuzzy.subset.Subset.card">[docs]</a>    def card(self):
+<div class="viewcode-block" id="Subset.card"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.subset.Subset.card">[docs]</a>    def card(self):
         &quot;&quot;&quot;
         Возвращает мощность нечеткого подмножества
         Синтаксис:
@@ -273,7 +273,7 @@ import math
             sum_ += self.value(i)
         return sum_ * (self.domain.end - self.domain.begin) / self.domain.acc
 </div>
-<div class="viewcode-block" id="Subset.mode"><a class="viewcode-back" href="../../../pyinference.fuzzy.subset.html#pyinference.fuzzy.subset.Subset.mode">[docs]</a>    def mode(self):
+<div class="viewcode-block" id="Subset.mode"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.subset.Subset.mode">[docs]</a>    def mode(self):
         &quot;&quot;&quot; Возвращает моду (точку максимума) нечеткого подмножества.
 
         Синтаксис:
@@ -293,7 +293,7 @@ import math
                 res = i
         return res
 </div>
-<div class="viewcode-block" id="Subset.euclid_distance"><a class="viewcode-back" href="../../../pyinference.fuzzy.subset.html#pyinference.fuzzy.subset.Subset.euclid_distance">[docs]</a>    def euclid_distance(self, other):
+<div class="viewcode-block" id="Subset.euclid_distance"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.subset.Subset.euclid_distance">[docs]</a>    def euclid_distance(self, other):
         begin = min(self.domain.begin, other.domain.begin)
         end = max(self.domain.end, other.domain.end)
         acc = max(self.domain.acc, other.domain.acc)
@@ -306,7 +306,7 @@ import math
 
         return math.sqrt(summ / acc)
 </div>
-<div class="viewcode-block" id="Subset.hamming_distance"><a class="viewcode-back" href="../../../pyinference.fuzzy.subset.html#pyinference.fuzzy.subset.Subset.hamming_distance">[docs]</a>    def hamming_distance(self, other):
+<div class="viewcode-block" id="Subset.hamming_distance"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.subset.Subset.hamming_distance">[docs]</a>    def hamming_distance(self, other):
         begin = min(self.domain.begin, other.domain.begin)
         end = max(self.domain.end, other.domain.end)
         acc = max(self.domain.acc, other.domain.acc)
@@ -374,7 +374,7 @@ import math
         return 1 - (self == other)
 
 </div>
-<div class="viewcode-block" id="Trapezoidal"><a class="viewcode-back" href="../../../pyinference.fuzzy.subset.html#pyinference.fuzzy.subset.Trapezoidal">[docs]</a>class Trapezoidal(Subset):
+<div class="viewcode-block" id="Trapezoidal"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.subset.Trapezoidal">[docs]</a>class Trapezoidal(Subset):
     &quot;&quot;&quot;
     Нечеткое множество с трапециевидной функцией принадлежности.
     Синтаксис:
@@ -415,18 +415,18 @@ import math
         self[begin_tol] = 1.0
         self[end_tol] = 1.0
 
-<div class="viewcode-block" id="Trapezoidal.card"><a class="viewcode-back" href="../../../pyinference.fuzzy.subset.html#pyinference.fuzzy.subset.Trapezoidal.card">[docs]</a>    def card(self):
+<div class="viewcode-block" id="Trapezoidal.card"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.subset.Trapezoidal.card">[docs]</a>    def card(self):
         return (self.begin_tol - self.domain.begin) / 2 + \
             self.end_tol - self.begin_tol + \
             (self.domain.end - self.end_tol) / 2
 </div>
-<div class="viewcode-block" id="Trapezoidal.mom"><a class="viewcode-back" href="../../../pyinference.fuzzy.subset.html#pyinference.fuzzy.subset.Trapezoidal.mom">[docs]</a>    def mom(self):
+<div class="viewcode-block" id="Trapezoidal.mom"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.subset.Trapezoidal.mom">[docs]</a>    def mom(self):
         return (self.end_tol + self.begin_tol) / 2
 </div>
-<div class="viewcode-block" id="Trapezoidal.mode"><a class="viewcode-back" href="../../../pyinference.fuzzy.subset.html#pyinference.fuzzy.subset.Trapezoidal.mode">[docs]</a>    def mode(self):
+<div class="viewcode-block" id="Trapezoidal.mode"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.subset.Trapezoidal.mode">[docs]</a>    def mode(self):
         return self.begin_tol
 </div>
-<div class="viewcode-block" id="Trapezoidal.median"><a class="viewcode-back" href="../../../pyinference.fuzzy.subset.html#pyinference.fuzzy.subset.Trapezoidal.median">[docs]</a>    def median(self):
+<div class="viewcode-block" id="Trapezoidal.median"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.subset.Trapezoidal.median">[docs]</a>    def median(self):
         return (self.domain.begin + self.begin_tol + self.domain.end + self.end_tol) / 4
 </div>
     def __eq__(self, other):
@@ -442,7 +442,7 @@ import math
         return Subset.__eq__(self, other)
 
 </div>
-<div class="viewcode-block" id="Triangle"><a class="viewcode-back" href="../../../pyinference.fuzzy.subset.html#pyinference.fuzzy.subset.Triangle">[docs]</a>class Triangle(Trapezoidal):
+<div class="viewcode-block" id="Triangle"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.subset.Triangle">[docs]</a>class Triangle(Trapezoidal):
     &quot;&quot;&quot;
     Нечеткое множество с функцией принадлежности в виде треугольника.
     Фактически, представляет собой частный случай трапециевидного нечеткого
@@ -466,14 +466,14 @@ import math
     def __init__(self, a, b, c):
         super(Triangle, self).__init__((a, b, b, c))
 
-<div class="viewcode-block" id="Triangle.mode"><a class="viewcode-back" href="../../../pyinference.fuzzy.subset.html#pyinference.fuzzy.subset.Triangle.mode">[docs]</a>    def mode(self):
+<div class="viewcode-block" id="Triangle.mode"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.subset.Triangle.mode">[docs]</a>    def mode(self):
         return self.begin_tol
 </div>
-<div class="viewcode-block" id="Triangle.card"><a class="viewcode-back" href="../../../pyinference.fuzzy.subset.html#pyinference.fuzzy.subset.Triangle.card">[docs]</a>    def card(self):
+<div class="viewcode-block" id="Triangle.card"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.subset.Triangle.card">[docs]</a>    def card(self):
         return (self.domain.end - self.domain.begin) / 2
 
 </div></div>
-<div class="viewcode-block" id="Interval"><a class="viewcode-back" href="../../../pyinference.fuzzy.subset.html#pyinference.fuzzy.subset.Interval">[docs]</a>class Interval(Trapezoidal):
+<div class="viewcode-block" id="Interval"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.subset.Interval">[docs]</a>class Interval(Trapezoidal):
     &quot;&quot;&quot;
     Определяет четкий интервал как частный вид нечеткого множества. Конструктор
     принимает два параметра - границы интервала.
@@ -486,17 +486,17 @@ import math
         super(Interval, self).__init__((a, a, b, b))
         self.level = x
 
-<div class="viewcode-block" id="Interval.card"><a class="viewcode-back" href="../../../pyinference.fuzzy.subset.html#pyinference.fuzzy.subset.Interval.card">[docs]</a>    def card(self):
+<div class="viewcode-block" id="Interval.card"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.subset.Interval.card">[docs]</a>    def card(self):
         return self.end_tol - self.begin_tol
 </div>
-<div class="viewcode-block" id="Interval.value"><a class="viewcode-back" href="../../../pyinference.fuzzy.subset.html#pyinference.fuzzy.subset.Interval.value">[docs]</a>    def value(self, value):
+<div class="viewcode-block" id="Interval.value"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.subset.Interval.value">[docs]</a>    def value(self, value):
         if value in self.domain:
             return self.level
         else:
             return 0.0
 
 </div></div>
-<div class="viewcode-block" id="Point"><a class="viewcode-back" href="../../../pyinference.fuzzy.subset.html#pyinference.fuzzy.subset.Point">[docs]</a>class Point(Trapezoidal):
+<div class="viewcode-block" id="Point"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.subset.Point">[docs]</a>class Point(Trapezoidal):
     &quot;&quot;&quot;
     Реализует нечеткое множество состоящее из одной точки.
     Синтаксис:
@@ -507,7 +507,7 @@ import math
     def __init__(self, a):
         super(Point, self).__init__((a, a, a, a))
 
-<div class="viewcode-block" id="Point.value"><a class="viewcode-back" href="../../../pyinference.fuzzy.subset.html#pyinference.fuzzy.subset.Point.value">[docs]</a>    def value(self, x):
+<div class="viewcode-block" id="Point.value"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.subset.Point.value">[docs]</a>    def value(self, x):
         if x != self.domain.begin:
             return 0.0
         elif self.domain.begin == x:
@@ -515,15 +515,15 @@ import math
         else:
             return -1
 </div>
-<div class="viewcode-block" id="Point.plot"><a class="viewcode-back" href="../../../pyinference.fuzzy.subset.html#pyinference.fuzzy.subset.Point.plot">[docs]</a>    def plot(self, verbose=True, subplot=p):
+<div class="viewcode-block" id="Point.plot"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.subset.Point.plot">[docs]</a>    def plot(self, verbose=True, subplot=p):
         subplot.scatter([self.domain.begin], [1.0])
         subplot.plot(self.domain.begin, 1.0)
 </div>
-<div class="viewcode-block" id="Point.card"><a class="viewcode-back" href="../../../pyinference.fuzzy.subset.html#pyinference.fuzzy.subset.Point.card">[docs]</a>    def card(self):
+<div class="viewcode-block" id="Point.card"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.subset.Point.card">[docs]</a>    def card(self):
         return 0.0
 
 </div></div>
-<div class="viewcode-block" id="Gaussian"><a class="viewcode-back" href="../../../pyinference.fuzzy.subset.html#pyinference.fuzzy.subset.Gaussian">[docs]</a>class Gaussian(Subset):
+<div class="viewcode-block" id="Gaussian"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.subset.Gaussian">[docs]</a>class Gaussian(Subset):
     &quot;&quot;&quot;
     Определяет нечеткое множество с функцией принадлежности в виде гауссианы.
     Синтаксис:
@@ -541,10 +541,10 @@ import math
         self.median = float(mu)
         self.omega = float(omega)
 
-<div class="viewcode-block" id="Gaussian.value"><a class="viewcode-back" href="../../../pyinference.fuzzy.subset.html#pyinference.fuzzy.subset.Gaussian.value">[docs]</a>    def value(self, x):
+<div class="viewcode-block" id="Gaussian.value"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.subset.Gaussian.value">[docs]</a>    def value(self, x):
         return round(math.exp(-((x - self.median) ** 2) / (2 * self.omega ** 2)), 5)
 </div>
-<div class="viewcode-block" id="Gaussian.plot"><a class="viewcode-back" href="../../../pyinference.fuzzy.subset.html#pyinference.fuzzy.subset.Gaussian.plot">[docs]</a>    def plot(self, verbose=True, subplot=p):
+<div class="viewcode-block" id="Gaussian.plot"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.subset.Gaussian.plot">[docs]</a>    def plot(self, verbose=True, subplot=p):
         xxx = []
         yyy = []
         for i in self.domain:
@@ -554,22 +554,22 @@ import math
         subplot.plot(self.domain.end + (self.domain.end - self.domain.begin) / 3, -0.1)
         subplot.text(self.median, 1.00, str(self.median))
 </div>
-<div class="viewcode-block" id="Gaussian.centr"><a class="viewcode-back" href="../../../pyinference.fuzzy.subset.html#pyinference.fuzzy.subset.Gaussian.centr">[docs]</a>    def centr(self):
+<div class="viewcode-block" id="Gaussian.centr"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.subset.Gaussian.centr">[docs]</a>    def centr(self):
         return self.median
 </div>
-<div class="viewcode-block" id="Gaussian.mode"><a class="viewcode-back" href="../../../pyinference.fuzzy.subset.html#pyinference.fuzzy.subset.Gaussian.mode">[docs]</a>    def mode(self):
+<div class="viewcode-block" id="Gaussian.mode"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.subset.Gaussian.mode">[docs]</a>    def mode(self):
         return self.median
 </div>
-<div class="viewcode-block" id="Gaussian.card"><a class="viewcode-back" href="../../../pyinference.fuzzy.subset.html#pyinference.fuzzy.subset.Gaussian.card">[docs]</a>    def card(self):
+<div class="viewcode-block" id="Gaussian.card"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.subset.Gaussian.card">[docs]</a>    def card(self):
         return round(math.sqrt(2 * math.pi) * self.omega, 5)
 
 </div></div>
-<div class="viewcode-block" id="Algebra"><a class="viewcode-back" href="../../../pyinference.fuzzy.subset.html#pyinference.fuzzy.subset.Algebra">[docs]</a>class Algebra():
+<div class="viewcode-block" id="Algebra"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.subset.Algebra">[docs]</a>class Algebra():
     def __init__(self):
         pass
 
 </div>
-<div class="viewcode-block" id="SubsetAlgebra"><a class="viewcode-back" href="../../../pyinference.fuzzy.subset.html#pyinference.fuzzy.subset.SubsetAlgebra">[docs]</a>class SubsetAlgebra(Algebra):
+<div class="viewcode-block" id="SubsetAlgebra"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.subset.SubsetAlgebra">[docs]</a>class SubsetAlgebra(Algebra):
     def __init__(self, tnorm=None):
         Algebra.__init__(self)
         self.tnorm = tnorm or MinMax()
@@ -651,7 +651,7 @@ import math
         return 1 - (self == other)
 
 </div>
-<div class="viewcode-block" id="NumbersAlgebra"><a class="viewcode-back" href="../../../pyinference.fuzzy.subset.html#pyinference.fuzzy.subset.NumbersAlgebra">[docs]</a>class NumbersAlgebra(Algebra):
+<div class="viewcode-block" id="NumbersAlgebra"><a class="viewcode-back" href="../../../pyinference.fuzzy.html#pyinference.fuzzy.subset.NumbersAlgebra">[docs]</a>class NumbersAlgebra(Algebra):
     pass
 
 </div>
@@ -691,13 +691,13 @@ if __name__ == &quot;__main__&quot;:
         <li class="right" >
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="../../../index.html">pyinference 0.1 documentation</a> &raquo;</li>
+        <li><a href="../../../index.html">pyinference 0.4.0 documentation</a> &raquo;</li>
           <li><a href="../../index.html" >Module code</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2014, sejros.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
     </div>
   </body>
 </html>
