@@ -2,6 +2,10 @@
 
 __author__ = 'sejros'
 
+from .factor import Factor
+from .net import Net
+from .variable import Variable
+
 """ Модуль предоставляет возможность работы с логическим выводом.
 
 Смешанная сеть вывода позволяет в произвольном порядке комбинировать детерминистскую, Байесовскую и
