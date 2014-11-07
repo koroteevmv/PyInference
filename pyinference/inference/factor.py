@@ -255,8 +255,8 @@ class Factor(object):
         cons2 = set(other.cons)
 
         everything = cons1 | cons2 | cond1 | cond2
-        cond = cond1 & cond2
-        cons = everything - cond
+        cons = (cons1 | cons2)
+        cond = everything - cons
         res = Factor(name="Product", cons=list(cons), cond=list(cond))
 
         flat = res.cpd.flatten()
