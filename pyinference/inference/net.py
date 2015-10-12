@@ -164,6 +164,8 @@ class Net(object):
                     if var.name == cons.name:
                         found = True
                         node.parents.append(node_)
+##            print self.nodes
+##            print var.name, found
             correct = correct and found
         if not correct:
             raise AttributeError
